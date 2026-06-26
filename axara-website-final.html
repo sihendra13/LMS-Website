@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Axara Digital System — Platform LMS & SOP Terdepan di Indonesia</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #98a2b3;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --gold: #D97706;
+  --gold-light: #FEF3C7;
+  --green-50: #f0fdf4;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green: #059669;
+  --purple: #7C3AED;
+  --purple-light: #F5F3FF;
+  --amber-50: #fffbeb;
+  --amber-500: #f59e0b;
+  --cyan-light: #ECFEFF;
+  --red-light: #FEF2F2;
+  --r: 8px; --r-lg: 14px; --r-xl: 20px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Manrope', -apple-system, sans-serif;
+  background: var(--white); color: var(--gray-900);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  background: var(--white); border-bottom: 1px solid var(--gray-200);
+  height: 64px; padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo-mark { width: 34px; height: 34px; border-radius: 9px; background: var(--blue-700); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; }
+.nav-logo-text { font-size: 17px; font-weight: 800; color: var(--gray-900); letter-spacing: -0.5px; }
+.nav-logo-text span { color: var(--blue-600); }
+.nav-center { display: flex; align-items: center; gap: 2px; }
+.nav-center a { font-size: 14px; font-weight: 500; color: var(--gray-600); text-decoration: none; padding: 7px 14px; border-radius: 7px; transition: all 0.15s; }
+.nav-center a:hover { color: var(--gray-900); background: var(--gray-100); }
+.nav-right { display: flex; align-items: center; gap: 10px; }
+.btn-ghost { font-size: 14px; font-weight: 600; color: var(--gray-700); padding: 8px 16px; border-radius: var(--r); text-decoration: none; transition: all 0.15s; }
+.btn-ghost:hover { background: var(--gray-100); }
+.btn-nav-cta { font-size: 14px; font-weight: 600; color: var(--white); background: var(--blue-600); padding: 9px 20px; border-radius: var(--r); text-decoration: none; transition: background 0.15s; }
+.btn-nav-cta:hover { background: var(--blue-700); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { width: 22px; height: 2px; background: var(--gray-700); border-radius: 2px; display: block; }
+.mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 800; background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 12px 20px 20px; flex-direction: column; gap: 2px; box-shadow: var(--shadow-md); }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 15px; font-weight: 500; color: var(--gray-600); text-decoration: none; padding: 10px 12px; border-radius: var(--r); }
+.mobile-menu a:hover { background: var(--gray-100); color: var(--gray-900); }
+.mobile-menu .mm-cta { background: var(--blue-600); color: #fff !important; text-align: center; margin-top: 6px; font-weight: 600; }
+
+/* HERO */
+.hero { padding: 120px 40px 80px; background: var(--white); position: relative; overflow: hidden; }
+.hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--gray-200); border-radius: 99px; padding: 5px 14px; font-size: 12px; font-weight: 600; color: var(--gray-500); margin-bottom: 22px; background: var(--gray-50); }
+.badge-dot { width: 6px; height: 6px; background: var(--green-500); border-radius: 50%; animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+h1 { font-size: clamp(34px, 4vw, 54px); font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; color: var(--gray-900); margin-bottom: 20px; }
+h1 em { font-style: normal; color: var(--blue-600); }
+.hero-p { font-size: 17px; color: var(--gray-500); line-height: 1.8; margin-bottom: 36px; max-width: 480px; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-600); color: var(--white); padding: 13px 24px; border-radius: var(--r); font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.15s; box-shadow: 0 2px 8px rgba(37,99,235,0.3); }
+.btn-primary:hover { background: var(--blue-700); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(37,99,235,0.35); }
+.btn-outline { display: inline-flex; align-items: center; gap: 8px; background: var(--white); color: var(--gray-700); padding: 13px 24px; border-radius: var(--r); font-size: 15px; font-weight: 600; text-decoration: none; border: 1.5px solid var(--gray-300); transition: all 0.15s; }
+.btn-outline:hover { border-color: var(--gray-400); background: var(--gray-50); }
+.hero-stats { display: flex; flex-wrap: wrap; gap: 36px; }
+.hs-val { font-size: 28px; font-weight: 800; color: var(--gray-900); letter-spacing: -1px; line-height: 1; }
+.hs-val span { color: var(--blue-600); }
+.hs-lbl { font-size: 12px; color: var(--gray-400); margin-top: 4px; font-weight: 500; }
+
+/* HERO VISUAL */
+.hero-visual { position: relative; }
+.hv-main { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--r-xl); padding: 24px; box-shadow: var(--shadow-lg); }
+.hv-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.hv-title { font-size: 13px; font-weight: 700; color: var(--gray-900); }
+.hv-badge-live { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 99px; background: var(--green-50); color: var(--green-600); }
+.hv-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.hv-stat { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 10px; padding: 12px; }
+.hv-sv { font-size: 22px; font-weight: 800; color: var(--gray-900); letter-spacing: -1px; }
+.hv-sv span { color: var(--blue-600); }
+.hv-sl { font-size: 11px; color: var(--gray-400); margin-top: 2px; font-weight: 500; }
+.hv-bars { display: flex; flex-direction: column; gap: 9px; }
+.hv-bl { display: flex; justify-content: space-between; font-size: 12px; color: var(--gray-500); margin-bottom: 4px; font-weight: 500; }
+.hv-bl span:last-child { font-weight: 700; color: var(--gray-900); }
+.hv-b { height: 5px; background: var(--gray-200); border-radius: 99px; overflow: hidden; }
+.hv-bf { height: 100%; border-radius: 99px; }
+.hv-float { position: absolute; background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 12px 16px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 10px; }
+.hv-float.f1 { bottom: -18px; left: -28px; }
+.hv-float.f2 { top: -18px; right: -22px; }
+.hv-float-ic { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+.hv-float-val { font-size: 16px; font-weight: 800; color: var(--gray-900); letter-spacing: -0.5px; }
+.hv-float-lbl { font-size: 11px; color: var(--gray-400); font-weight: 500; }
+
+/* LOGOS */
+.logos { padding: 36px 40px; background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+.logos-inner { max-width: 1100px; margin: 0 auto; }
+.logos-label { text-align: center; font-size: 12px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 24px; }
+.logos-row { display: flex; align-items: center; justify-content: center; gap: 44px; flex-wrap: wrap; }
+.logo-item { display: flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 700; color: var(--gray-300); }
+.logo-item-box { width: 30px; height: 30px; border-radius: 7px; background: var(--gray-200); display: flex; align-items: center; justify-content: center; font-size: 13px; }
+
+/* SECTIONS */
+section { padding: 88px 40px; }
+.sec-inner { max-width: 1100px; margin: 0 auto; }
+.sec-tag { display: inline-block; font-size: 12px; font-weight: 700; color: var(--blue-600); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; }
+.sec-title { font-size: clamp(26px, 3vw, 40px); font-weight: 800; line-height: 1.15; letter-spacing: -1px; color: var(--gray-900); margin-bottom: 14px; }
+.sec-sub { font-size: 16px; color: var(--gray-500); line-height: 1.75; max-width: 520px; }
+.sec-header { margin-bottom: 52px; }
+.sec-header.centered { text-align: center; }
+.sec-header.centered .sec-sub { margin: 0 auto; }
+
+/* PRODUK */
+.produk { background: var(--white); }
+.produk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.produk-card { border: 1.5px solid var(--gray-200); border-radius: var(--r-xl); padding: 36px; transition: all 0.2s; position: relative; overflow: hidden; }
+.produk-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: var(--r-xl) var(--r-xl) 0 0; opacity: 0; transition: opacity 0.2s; }
+.produk-card.blue::before { background: var(--blue-600); }
+.produk-card.gold::before { background: var(--gold); }
+.produk-card:hover { border-color: var(--blue-500); box-shadow: 0 0 0 4px var(--blue-50), var(--shadow-md); }
+.produk-card:hover::before { opacity: 1; }
+.produk-num { font-size: 36px; font-weight: 800; color: var(--gray-200); line-height: 1; margin-bottom: 16px; letter-spacing: -2px; }
+.produk-icon { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+.produk-name { font-size: 20px; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.4px; color: var(--gray-900); }
+.produk-desc { font-size: 14px; color: var(--gray-500); line-height: 1.75; margin-bottom: 22px; }
+.feat-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
+.feat-item { display: flex; gap: 9px; font-size: 13px; color: var(--gray-600); }
+.feat-check { flex-shrink: 0; font-size: 12px; margin-top: 1px; }
+.p-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 99px; background: var(--gray-100); color: var(--gray-500); border: 1px solid var(--gray-200); }
+
+/* BENEFIT */
+.benefit { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+.benefit-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--gray-200); border-radius: var(--r-xl); overflow: hidden; margin-top: 52px; }
+.benefit-card { background: var(--white); padding: 32px 28px; transition: background 0.15s; }
+.benefit-card:hover { background: var(--blue-50); }
+.benefit-ic { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+.benefit-title { font-size: 15px; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; }
+.benefit-desc { font-size: 13px; color: var(--gray-500); line-height: 1.7; }
+
+/* KEUNGGULAN */
+.keunggulan { background: var(--white); }
+.ku-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.ku-list { display: flex; flex-direction: column; }
+.ku-item { display: flex; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--gray-200); transition: all 0.15s; }
+.ku-item:first-child { padding-top: 0; }
+.ku-item:last-child { border-bottom: none; padding-bottom: 0; }
+.ku-item:hover .ku-num { color: var(--blue-600); }
+.ku-num { font-size: 12px; font-weight: 700; color: var(--gray-300); min-width: 28px; margin-top: 2px; letter-spacing: 0.05em; transition: color 0.15s; }
+.ku-title { font-size: 15px; font-weight: 700; color: var(--gray-900); margin-bottom: 5px; }
+.ku-desc { font-size: 13px; color: var(--gray-500); line-height: 1.7; }
+.ku-visual { background: var(--gray-900); border-radius: var(--r-xl); padding: 32px; position: relative; overflow: hidden; }
+.ku-visual::before { content: ''; position: absolute; top: -60px; right: -60px; width: 220px; height: 220px; background: radial-gradient(circle, rgba(59,130,246,0.2), transparent 70%); border-radius: 50%; }
+.kv-head { display: flex; align-items: center; gap: 6px; margin-bottom: 22px; }
+.kv-dot { width: 9px; height: 9px; border-radius: 50%; }
+.kv-title { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.4); margin-left: 5px; }
+.kv-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.kv-stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 14px; }
+.kv-sv { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -1px; }
+.kv-sv span { color: var(--blue-500); }
+.kv-sl { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 2px; }
+.kv-bars { display: flex; flex-direction: column; gap: 10px; }
+.kv-bl { display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
+.kv-bl span:last-child { color: #fff; font-weight: 700; }
+.kv-b { height: 4px; background: rgba(255,255,255,0.08); border-radius: 99px; overflow: hidden; }
+.kv-bf { height: 100%; border-radius: 99px; }
+.kv-live { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; justify-content: space-between; align-items: center; }
+.kv-live-txt { font-size: 11px; color: rgba(255,255,255,0.3); }
+.kv-live-dot { width: 7px; height: 7px; background: var(--green-500); border-radius: 50%; animation: blink 2s infinite; }
+
+/* VISI MISI */
+.visimisi { background: var(--gray-50); border-top: 1px solid var(--gray-200); }
+.vm-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 52px; }
+.vm-visi { background: var(--blue-700); border-radius: var(--r-xl); padding: 40px; position: relative; overflow: hidden; }
+.vm-visi::before { content: '"'; position: absolute; right: 20px; top: 10px; font-size: 120px; font-weight: 900; color: rgba(255,255,255,0.07); line-height: 1; font-family: Georgia, serif; }
+.vm-eye { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+.vm-txt { font-size: 18px; font-weight: 700; line-height: 1.6; color: #fff; position: relative; z-index: 1; }
+.misi-list { display: flex; flex-direction: column; }
+.misi-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--gray-200); }
+.misi-item:first-child { padding-top: 0; }
+.misi-item:last-child { border-bottom: none; padding-bottom: 0; }
+.misi-num { font-size: 13px; font-weight: 800; color: var(--blue-600); min-width: 26px; }
+.misi-title { font-size: 15px; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
+.misi-desc { font-size: 13px; color: var(--gray-500); line-height: 1.7; }
+
+/* PAKET */
+.paket { background: var(--white); }
+.paket-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 52px; }
+.paket-card { border: 1.5px solid var(--gray-200); border-radius: var(--r-xl); padding: 32px 28px; transition: all 0.2s; }
+.paket-card.featured { border-color: var(--blue-600); background: var(--blue-700); }
+.paket-card:not(.featured):hover { border-color: var(--gray-400); box-shadow: var(--shadow-md); }
+.pk-badge { font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 99px; display: inline-block; margin-bottom: 20px; }
+.pk-badge.popular { background: var(--blue-100); color: var(--blue-700); }
+.pk-badge.starter { background: var(--gray-100); color: var(--gray-500); }
+.pk-badge.enterprise { background: var(--amber-50); color: var(--amber-500); }
+.paket-card.featured .pk-badge { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); }
+.pk-name { font-size: 20px; font-weight: 800; color: var(--gray-900); margin-bottom: 6px; }
+.paket-card.featured .pk-name { color: #fff; }
+.pk-price { font-size: 28px; font-weight: 800; color: var(--gray-900); letter-spacing: -1px; margin-bottom: 4px; }
+.paket-card.featured .pk-price { color: #fff; }
+.pk-period { font-size: 13px; color: var(--gray-400); margin-bottom: 22px; }
+.paket-card.featured .pk-period { color: rgba(255,255,255,0.55); }
+.pk-feats { display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; }
+.pk-feat { display: flex; gap: 9px; font-size: 13px; align-items: flex-start; color: var(--gray-600); }
+.paket-card.featured .pk-feat { color: rgba(255,255,255,0.8); }
+.pk-feat-ic { width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.pk-feat-ic svg { width: 9px; height: 9px; }
+.pk-feat-ic.yes { background: var(--green-50); color: var(--green-600); }
+.pk-feat-ic.no { background: var(--gray-100); color: var(--gray-300); }
+.paket-card.featured .pk-feat-ic.yes { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); }
+.pk-btn { display: block; text-align: center; padding: 12px; border-radius: var(--r); font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.15s; }
+.pk-btn.outline { border: 1.5px solid var(--gray-300); color: var(--gray-700); background: var(--white); }
+.pk-btn.outline:hover { border-color: var(--blue-600); color: var(--blue-600); }
+.pk-btn.solid { background: var(--white); color: var(--blue-700); }
+.pk-btn.solid:hover { background: var(--blue-50); }
+.pk-btn.dark { background: var(--gray-900); color: var(--white); border: none; }
+.pk-btn.dark:hover { background: var(--gray-700); }
+
+/* CTA */
+.cta-sec { padding: 88px 40px; background: var(--gray-900); text-align: center; }
+.cta-sec .sec-tag { color: var(--blue-500); display: block; margin-bottom: 12px; }
+.cta-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: #fff; letter-spacing: -1.5px; margin-bottom: 16px; line-height: 1.15; }
+.cta-sub { font-size: 16px; color: rgba(255,255,255,0.5); line-height: 1.75; max-width: 480px; margin: 0 auto 36px; }
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+.btn-cta-white { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--gray-900); padding: 13px 26px; border-radius: var(--r); font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.15s; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.btn-cta-white:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+.btn-cta-ghost { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.8); padding: 13px 26px; border-radius: var(--r); font-size: 15px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.12); transition: all 0.15s; }
+.btn-cta-ghost:hover { background: rgba(255,255,255,0.12); }
+.cta-contact { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+.cta-contact a { font-size: 14px; color: rgba(255,255,255,0.4); text-decoration: none; font-weight: 500; transition: color 0.15s; }
+.cta-contact a:hover { color: rgba(255,255,255,0.8); }
+
+/* FOOTER */
+footer { background: var(--gray-900); border-top: 1px solid rgba(255,255,255,0.07); padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+.ft-logo { display: flex; align-items: center; gap: 9px; }
+.ft-logo-mark { width: 28px; height: 28px; border-radius: 7px; background: var(--blue-700); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; }
+.ft-logo-txt { font-size: 15px; font-weight: 800; color: rgba(255,255,255,0.8); letter-spacing: -0.3px; }
+.ft-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+.ft-links { display: flex; gap: 20px; }
+.ft-links a { font-size: 12px; color: rgba(255,255,255,0.3); text-decoration: none; }
+.ft-links a:hover { color: rgba(255,255,255,0.6); }
+
+/* FADE */
+.fade { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.fade.on { opacity: 1; transform: none; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  nav { padding: 0 20px; }
+  .nav-center, .btn-ghost { display: none; }
+  .hamburger { display: flex; }
+  section { padding: 60px 20px; }
+  .hero { padding: 96px 20px 60px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { display: none; }
+  .produk-grid { grid-template-columns: 1fr; }
+  .benefit-grid { grid-template-columns: 1fr; background: none; gap: 12px; border-radius: 0; }
+  .benefit-card { border-radius: var(--r-lg); border: 1.5px solid var(--gray-200); display: flex; gap: 16px; align-items: flex-start; }
+  .ku-wrap, .vm-wrap { grid-template-columns: 1fr; gap: 32px; }
+  .paket-grid { grid-template-columns: 1fr; }
+  .logos { padding: 28px 20px; }
+  .cta-sec { padding: 60px 20px; }
+  footer { flex-direction: column; align-items: center; text-align: center; padding: 24px 20px; }
+}
+@media (min-width: 961px) {
+  .hamburger { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-mark">AX</div>
+    <div class="nav-logo-text">AXARA <span>Digital</span></div>
+  </a>
+  <div class="nav-center">
+    <a href="#produk">Produk</a>
+    <a href="#benefit">Benefit</a>
+    <a href="#keunggulan">Keunggulan</a>
+    <a href="#paket">Harga</a>
+    <a href="#visimisi">Visi & Misi</a>
+  </div>
+  <div class="nav-right">
+    <a href="#" class="btn-ghost">Masuk</a>
+    <a href="#kontak" class="btn-nav-cta">Mulai Sekarang</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#produk" onclick="closeMenu()">Produk</a>
+  <a href="#benefit" onclick="closeMenu()">Benefit</a>
+  <a href="#keunggulan" onclick="closeMenu()">Keunggulan</a>
+  <a href="#paket" onclick="closeMenu()">Harga</a>
+  <a href="#visimisi" onclick="closeMenu()">Visi & Misi</a>
+  <a href="#kontak" class="mm-cta" onclick="closeMenu()">Mulai Sekarang</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="fade">
+      <div class="hero-badge"><div class="badge-dot"></div>Platform LMS & SOP Terdepan di Indonesia</div>
+      <h1>Belajar Tanpa Batas.<br>Tumbuh <em>Tanpa Henti.</em></h1>
+      <p class="hero-p">Axara menghadirkan ekosistem pembelajaran digital lengkap — platform LMS siap pakai, video SOP berbasis AI, dan pendampingan transformasi digital end-to-end untuk korporasi Indonesia.</p>
+      <div class="hero-btns">
+        <a href="#kontak" class="btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          Coba Gratis 14 Hari
+        </a>
+        <a href="#produk" class="btn-outline">Lihat Produk</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hs-val">24<span>+</span></div><div class="hs-lbl">Klien Korporasi</div></div>
+        <div><div class="hs-val">318<span>+</span></div><div class="hs-lbl">Video SOP Diproduksi</div></div>
+        <div><div class="hs-val">98<span>%</span></div><div class="hs-lbl">Kepuasan Klien</div></div>
+      </div>
+    </div>
+    <div class="hero-visual fade" style="transition-delay:0.15s;">
+      <div class="hv-main">
+        <div class="hv-header">
+          <div class="hv-title">Dashboard Overview</div>
+          <div class="hv-badge-live">● Live</div>
+        </div>
+        <div class="hv-stats">
+          <div class="hv-stat"><div class="hv-sv">42</div><div class="hv-sl">Video SOP</div></div>
+          <div class="hv-stat"><div class="hv-sv">248</div><div class="hv-sl">Karyawan</div></div>
+          <div class="hv-stat"><div class="hv-sv">78<span>%</span></div><div class="hv-sl">Completion</div></div>
+        </div>
+        <div class="hv-bars">
+          <div><div class="hv-bl"><span>Sales</span><span>89%</span></div><div class="hv-b"><div class="hv-bf" style="width:89%;background:#2563eb;"></div></div></div>
+          <div><div class="hv-bl"><span>Finance</span><span>94%</span></div><div class="hv-b"><div class="hv-bf" style="width:94%;background:#16a34a;"></div></div></div>
+          <div><div class="hv-bl"><span>HRD</span><span>76%</span></div><div class="hv-b"><div class="hv-bf" style="width:76%;background:#d97706;"></div></div></div>
+          <div><div class="hv-bl"><span>Operasional</span><span>61%</span></div><div class="hv-b"><div class="hv-bf" style="width:61%;background:#7c3aed;"></div></div></div>
+        </div>
+      </div>
+      <div class="hv-float f1">
+        <div class="hv-float-ic" style="background:#f0fdf4;">🎓</div>
+        <div><div class="hv-float-val">186</div><div class="hv-float-lbl">Sertifikat aktif</div></div>
+      </div>
+      <div class="hv-float f2">
+        <div class="hv-float-ic" style="background:#eff6ff;">📈</div>
+        <div><div class="hv-float-val">+12%</div><div class="hv-float-lbl">vs bulan lalu</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos">
+  <div class="logos-inner">
+    <div class="logos-label">Dipercaya oleh perusahaan-perusahaan Indonesia</div>
+    <div class="logos-row">
+      <div class="logo-item"><div class="logo-item-box">🏢</div>PT Maju Bersama</div>
+      <div class="logo-item"><div class="logo-item-box">🏭</div>PT Sinar Indah</div>
+      <div class="logo-item"><div class="logo-item-box">🏬</div>PT Global Mitra</div>
+      <div class="logo-item"><div class="logo-item-box">🏦</div>CV Karya Jaya</div>
+      <div class="logo-item"><div class="logo-item-box">🏗️</div>PT Nusantara Utama</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUK -->
+<section class="produk" id="produk">
+  <div class="sec-inner">
+    <div class="sec-header fade">
+      <div class="sec-tag">Produk & Ruang Lingkup</div>
+      <div class="sec-title">Dua Produk Utama,<br>Satu Ekosistem Lengkap</div>
+      <p class="sec-sub">Bukan sekadar platform kosong — Axara menyediakan infrastruktur belajar digital yang terintegrasi dari konten hingga distribusi.</p>
+    </div>
+    <div class="produk-grid">
+      <div class="produk-card blue fade">
+        <div class="produk-num">01</div>
+        <div class="produk-icon" style="background:#eff6ff;">🖥️</div>
+        <div class="produk-name">Platform LMS Axara</div>
+        <p class="produk-desc">Dashboard manajemen pembelajaran berbasis cloud yang dirancang khusus untuk korporasi Indonesia. Tanpa tim IT, tanpa kerumitan teknis — langsung pakai, langsung produktif.</p>
+        <div class="feat-list">
+          <div class="feat-item"><span class="feat-check" style="color:#2563eb;">✓</span> Dashboard admin & karyawan terpisah</div>
+          <div class="feat-item"><span class="feat-check" style="color:#2563eb;">✓</span> Tracking completion & sertifikasi otomatis</div>
+          <div class="feat-item"><span class="feat-check" style="color:#2563eb;">✓</span> Quiz, leaderboard & laporan compliance</div>
+          <div class="feat-item"><span class="feat-check" style="color:#2563eb;">✓</span> Multi-cabang & multi-departemen</div>
+          <div class="feat-item"><span class="feat-check" style="color:#2563eb;">✓</span> Notifikasi & deadline otomatis</div>
+        </div>
+        <div class="p-tags"><span class="tag">SaaS</span><span class="tag">Multi-tenant</span><span class="tag">Cloud</span><span class="tag">B2B</span></div>
+      </div>
+      <div class="produk-card gold fade">
+        <div class="produk-num">02</div>
+        <div class="produk-icon" style="background:#fef3c7;">🎬</div>
+        <div class="produk-name">Produksi Video SOP AI</div>
+        <p class="produk-desc">Layanan produksi video SOP dan training menggunakan teknologi AI Avatar — menghadirkan konten pelatihan yang profesional, konsisten, dan dapat diperbarui dengan cepat tanpa biaya syuting ulang.</p>
+        <div class="feat-list">
+          <div class="feat-item"><span class="feat-check" style="color:#d97706;">✓</span> Penulisan script SOP berbasis standar perusahaan</div>
+          <div class="feat-item"><span class="feat-check" style="color:#d97706;">✓</span> Produksi video AI avatar Bahasa Indonesia digital</div>
+          <div class="feat-item"><span class="feat-check" style="color:#d97706;">✓</span> SOP Sales, HRD, Finance, Ops, IT, CS</div>
+          <div class="feat-item"><span class="feat-check" style="color:#d97706;">✓</span> Upload & integrasi langsung ke LMS</div>
+          <div class="feat-item"><span class="feat-check" style="color:#d97706;">✓</span> Revisi cepat tanpa biaya produksi ulang</div>
+        </div>
+        <div class="p-tags"><span class="tag">AI Avatar</span><span class="tag">Bahasa Indonesia</span><span class="tag">SOP</span><span class="tag">Training</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFIT -->
+<section class="benefit" id="benefit">
+  <div class="sec-inner">
+    <div class="sec-header centered fade">
+      <div class="sec-tag">Mengapa Memilih Axara</div>
+      <div class="sec-title">Nilai Nyata untuk Bisnis Anda</div>
+      <p class="sec-sub">Lebih dari sekadar software — Axara adalah mitra pertumbuhan yang memastikan investasi pelatihan Anda menghasilkan dampak terukur.</p>
+    </div>
+    <div class="benefit-grid fade">
+      <div class="benefit-card"><div class="benefit-ic" style="background:#eff6ff;">⚡</div><div><div class="benefit-title">Implementasi Cepat</div><p class="benefit-desc">Onboarding dalam 3–5 hari kerja. Platform siap pakai tanpa tim IT. Kami tangani setup, migrasi konten, dan pelatihan admin dari awal.</p></div></div>
+      <div class="benefit-card"><div class="benefit-ic" style="background:#fef3c7;">💰</div><div><div class="benefit-title">Hemat Biaya Training</div><p class="benefit-desc">Kurangi biaya pelatihan konvensional hingga 70%. Video SOP AI dapat diputar ulang kapanpun, oleh siapapun, tanpa biaya trainer atau venue tambahan.</p></div></div>
+      <div class="benefit-card"><div class="benefit-ic" style="background:#f0fdf4;">📊</div><div><div class="benefit-title">Hasil Terukur & Compliance</div><p class="benefit-desc">Laporan real-time siapa yang sudah dan belum menonton. Sertifikasi otomatis. Data compliance siap untuk audit internal maupun ISO.</p></div></div>
+      <div class="benefit-card"><div class="benefit-ic" style="background:#f5f3ff;">🎯</div><div><div class="benefit-title">Konten Selalu Up-to-Date</div><p class="benefit-desc">SOP berubah? Update video dalam hitungan jam, bukan minggu. Tidak perlu syuting ulang — cukup revisi script dan generate ulang dengan AI.</p></div></div>
+      <div class="benefit-card"><div class="benefit-ic" style="background:#ecfeff;">🌍</div><div><div class="benefit-title">Jangkau Seluruh Cabang</div><p class="benefit-desc">Karyawan di Surabaya, Medan, Makassar, atau mana pun bisa akses training yang sama. Konsistensi standar perusahaan di seluruh lokasi tanpa terkecuali.</p></div></div>
+      <div class="benefit-card"><div class="benefit-ic" style="background:#fef2f2;">🤝</div><div><div class="benefit-title">Pendampingan End-to-End</div><p class="benefit-desc">Dari konsultasi kebutuhan, produksi konten SOP, setup platform, hingga pelatihan tim internal Anda. Axara hadir di setiap langkah transformasi digital Anda.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section class="keunggulan" id="keunggulan">
+  <div class="sec-inner">
+    <div class="ku-wrap">
+      <div>
+        <div class="sec-header fade" style="margin-bottom:32px;">
+          <div class="sec-tag">Keunggulan Produk</div>
+          <div class="sec-title">Apa yang Membuat<br>Axara Berbeda</div>
+          <p class="sec-sub">Axara bukan platform kosong. Kami hadir sebagai solusi lengkap yang tidak ditawarkan kompetitor manapun di pasar Indonesia.</p>
+        </div>
+        <div class="ku-list fade">
+          <div class="ku-item"><div class="ku-num">01</div><div><div class="ku-title">Platform + Konten dalam Satu Paket</div><p class="ku-desc">Kompetitor hanya menjual platform kosong. Axara menyediakan platform LMS sekaligus memproduksi video SOP-nya — klien tidak perlu mencari vendor terpisah untuk konten dan distribusi.</p></div></div>
+          <div class="ku-item"><div class="ku-num">02</div><div><div class="ku-title">AI Avatar Berbahasa Indonesia</div><p class="ku-desc">Video SOP dibawakan oleh AI avatar yang berbicara Bahasa Indonesia dengan natural. Tidak ada aksen asing — tepat sasaran untuk karyawan di seluruh Indonesia.</p></div></div>
+          <div class="ku-item"><div class="ku-num">03</div><div><div class="ku-title">Tanpa Tim IT, Langsung Pakai</div><p class="ku-desc">HR dan manajer training bisa kelola seluruh sistem sendiri. Tidak perlu developer, tidak perlu infrastruktur server — semua sudah termasuk.</p></div></div>
+          <div class="ku-item"><div class="ku-num">04</div><div><div class="ku-title">Model Subscription Fleksibel</div><p class="ku-desc">Tiga paket yang tumbuh bersama bisnis Anda: Starter untuk UKM, Business untuk perusahaan menengah, dan Enterprise dengan akses produksi video mandiri untuk korporasi besar.</p></div></div>
+          <div class="ku-item"><div class="ku-num">05</div><div><div class="ku-title">Analytics & Compliance Real-time</div><p class="ku-desc">Completion rate per departemen, skor quiz, leaderboard karyawan, dan laporan compliance yang bisa langsung di-export untuk keperluan audit kapanpun.</p></div></div>
+        </div>
+      </div>
+      <div class="ku-visual fade">
+        <div class="kv-head">
+          <div class="kv-dot" style="background:#ef4444;"></div>
+          <div class="kv-dot" style="background:#f59e0b;"></div>
+          <div class="kv-dot" style="background:#22c55e;"></div>
+          <div class="kv-title">Platform Overview · Live</div>
+        </div>
+        <div class="kv-stats">
+          <div class="kv-stat"><div class="kv-sv">78<span>%</span></div><div class="kv-sl">Avg. Completion</div></div>
+          <div class="kv-stat"><div class="kv-sv">186</div><div class="kv-sl">Sertifikat Aktif</div></div>
+          <div class="kv-stat"><div class="kv-sv">248</div><div class="kv-sl">Karyawan Aktif</div></div>
+          <div class="kv-stat"><div class="kv-sv">42</div><div class="kv-sl">Video SOP</div></div>
+        </div>
+        <div class="kv-bars">
+          <div><div class="kv-bl"><span>Sales</span><span>89%</span></div><div class="kv-b"><div class="kv-bf" style="width:89%;background:#3b82f6;"></div></div></div>
+          <div><div class="kv-bl"><span>Finance</span><span>94%</span></div><div class="kv-b"><div class="kv-bf" style="width:94%;background:#22c55e;"></div></div></div>
+          <div><div class="kv-bl"><span>HRD</span><span>76%</span></div><div class="kv-b"><div class="kv-bf" style="width:76%;background:#f59e0b;"></div></div></div>
+          <div><div class="kv-bl"><span>Operasional</span><span>61%</span></div><div class="kv-b"><div class="kv-bf" style="width:61%;background:#a78bfa;"></div></div></div>
+        </div>
+        <div class="kv-live">
+          <div class="kv-live-txt">Diperbarui real-time</div>
+          <div class="kv-live-dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAKET -->
+<section class="paket" id="paket">
+  <div class="sec-inner">
+    <div class="sec-header centered fade">
+      <div class="sec-tag">Paket & Harga</div>
+      <div class="sec-title">Mulai dari Yang Anda Butuhkan</div>
+      <p class="sec-sub">Tiga paket yang tumbuh bersama bisnis Anda. Tidak ada biaya setup tersembunyi, tidak ada kontrak jangka panjang.</p>
+    </div>
+    <div class="paket-grid fade">
+      <div class="paket-card">
+        <div class="pk-badge starter">STARTER</div>
+        <div class="pk-name">Starter</div>
+        <div class="pk-price">Rp 2–4jt</div>
+        <div class="pk-period">per bulan · hingga 200 karyawan</div>
+        <div class="pk-feats">
+          <div class="pk-feat"><div class="pk-feat-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Platform LMS lengkap</div>
+          <div class="pk-feat"><div class="pk-feat-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>5–10 video SOP/bulan (by Axara)</div>
+          <div class="pk-feat"><div class="pk-feat-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Sertifikasi & laporan dasar</div>
+          <div class="pk-feat"><div class="pk-feat-ic no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Upload video mandiri</div>
+          <div class="pk-feat"><div class="pk-feat-ic no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Akses HeyGen mandiri</div>
+        </div>
+        <a href="#kontak" class="pk-btn outline">Mulai Gratis</a>
+      </div>
+      <div class="paket-card featured">
+        <div class="pk-badge popular">PALING POPULER</div>
+        <div class="pk-name">Business</div>
+        <div class="pk-price">Rp 5–10jt</div>
+        <div class="pk-period">per bulan · hingga 500 karyawan</div>
+        <div class="pk-feats">
+          <div class="pk-feat"><div class="pk-feat-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Semua fitur Starter</div>
+          <div class="pk-feat"><div class="pk-feat-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Upload video mandiri</div>
+          <div class="pk-feat"><div class="pk-feat-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Laporan & compliance lengkap</div>
+          <div class="pk-feat"><div class="pk-feat-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Produksi video AI (add-on)</div>
+          <div class="pk-feat"><div class="pk-feat-ic no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Akses HeyGen mandiri</div>
+        </div>
+        <a href="#kontak" class="pk-btn solid">Mulai Trial</a>
+      </div>
+      <div class="paket-card">
+        <div class="pk-badge enterprise">ENTERPRISE</div>
+        <div class="pk-name">Enterprise</div>
+        <div class="pk-price">Rp 15jt+</div>
+        <div class="pk-period">per bulan · karyawan tak terbatas</div>
+        <div class="pk-feats">
+          <div class="pk-feat"><div class="pk-feat-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Semua fitur Business</div>
+          <div class="pk-feat"><div class="pk-feat-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Akses HeyGen terintegrasi</div>
+          <div class="pk-feat"><div class="pk-feat-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Avatar custom branding perusahaan</div>
+          <div class="pk-feat"><div class="pk-feat-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Multi-cabang & multi-bahasa</div>
+          <div class="pk-feat"><div class="pk-feat-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Dedicated support & onboarding</div>
+        </div>
+        <a href="#kontak" class="pk-btn dark">Hubungi Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISI MISI -->
+<section class="visimisi" id="visimisi">
+  <div class="sec-inner">
+    <div class="sec-header fade">
+      <div class="sec-tag">Visi & Misi</div>
+      <div class="sec-title">Kami Bukan Sekadar<br>Vendor Teknologi</div>
+      <p class="sec-sub">Axara dibangun dengan satu keyakinan: bahwa akses ke pembelajaran berkualitas adalah hak setiap orang Indonesia, bukan privilege segelintir pihak.</p>
+    </div>
+    <div class="vm-wrap">
+      <div class="vm-visi fade">
+        <div class="vm-eye">Visi Kami</div>
+        <div class="vm-txt">Menjadi ekosistem pembelajaran digital terdepan yang memberdayakan setiap orang di Indonesia untuk belajar tanpa batas ruang, waktu, dan latar belakang.</div>
+      </div>
+      <div class="misi-list fade">
+        <div class="misi-item"><div class="misi-num">01</div><div><div class="misi-title">Simpel Akses</div><p class="misi-desc">Mengembangkan platform LMS yang simpel, stabil, dan bisa dipakai siapa saja tanpa tim IT. Teknologi canggih tidak harus terasa rumit.</p></div></div>
+        <div class="misi-item"><div class="misi-num">02</div><div><div class="misi-title">Personalisasi Belajar</div><p class="misi-desc">Menciptakan teknologi edukasi adaptif berbasis data, agar hasil belajar tiap orang terukur dan tepat sasaran — bukan one-size-fits-all.</p></div></div>
+        <div class="misi-item"><div class="misi-num">03</div><div><div class="misi-title">Transformasi Digital</div><p class="misi-desc">Mendampingi institusi bertransformasi digital end-to-end, dari migrasi konten sampai tim internal mahir mengoperasikannya secara mandiri.</p></div></div>
+        <div class="misi-item"><div class="misi-num">04</div><div><div class="misi-title">Demokratisasi Ilmu</div><p class="misi-desc">Menjaga pendidikan berkualitas tetap terjangkau, karena pintar adalah hak semua orang — bukan privilege segelintir orang yang beruntung.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="kontak">
+  <div class="sec-tag">Mulai Bersama Axara</div>
+  <div class="cta-title fade">Siap Transformasi<br>Digital Perusahaan Anda?</div>
+  <p class="cta-sub fade">Coba platform Axara gratis 14 hari. Tidak perlu kartu kredit, tidak perlu komitmen. Tim kami siap mendampingi dari hari pertama.</p>
+  <div class="cta-btns fade">
+    <a href="#" class="btn-cta-white">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      Mulai Trial Gratis
+    </a>
+    <a href="#" class="btn-cta-ghost">Jadwalkan Demo</a>
+  </div>
+  <div class="cta-contact fade">
+    <a href="mailto:hello@axara.id">📧 hello@axara.id</a>
+    <a href="#">📱 WhatsApp Kami</a>
+    <a href="#">📍 Jakarta, Indonesia</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-logo">
+    <div class="ft-logo-mark">AX</div>
+    <div class="ft-logo-txt">AXARA Digital System</div>
+  </div>
+  <div class="ft-copy">© 2025 Axara Digital System. All rights reserved.</div>
+  <div class="ft-links">
+    <a href="#">Kebijakan Privasi</a>
+    <a href="#">Syarat & Ketentuan</a>
+    <a href="#">Kontak</a>
+  </div>
+</footer>
+
+<script>
+const hb = document.getElementById('hamburger');
+const mm = document.getElementById('mobileMenu');
+hb.addEventListener('click', () => mm.classList.toggle('open'));
+function closeMenu() { mm.classList.remove('open'); }
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => { e.target.classList.add('on'); obs.unobserve(e.target); }, i * 60);
+    }
+  });
+}, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+setTimeout(() => { document.querySelectorAll('.fade:not(.on)').forEach(el => el.classList.add('on')); }, 2000);
+</script>
+</body>
+</html>
