@@ -185,6 +185,38 @@
     .benefit-title { font-size: 16px; font-weight: 700; color: var(--navy-900); margin-bottom: 10px; }
     .benefit-desc { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
 
+    /* AXA AI ASSISTANT */
+    .axa-ai { background: var(--navy-900); position: relative; overflow: hidden; }
+    .axa-ai::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(122,90,248,0.15), transparent 70%); border-radius: 50%; }
+    .axa-ai::after { content: ''; position: absolute; bottom: -80px; left: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(21,112,239,0.1), transparent 70%); border-radius: 50%; }
+    .axa-ai .sec-title { color: #fff; }
+    .axa-ai .sec-sub { color: rgba(255,255,255,0.5); }
+    .axa-ai-badge {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      color: #a78bfa; background: rgba(122,90,248,0.15); border: 1px solid rgba(122,90,248,0.25);
+      padding: 5px 14px; border-radius: 99px; margin-bottom: 20px;
+      letter-spacing: 0.06em;
+    }
+    .axa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; z-index: 1; }
+    .axa-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--r-lg); padding: 36px 28px;
+      transition: all 0.3s; backdrop-filter: blur(8px);
+    }
+    .axa-card:hover { border-color: rgba(122,90,248,0.4); background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+    .axa-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: rgba(122,90,248,0.15); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .axa-title { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .axa-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+    @media (max-width: 960px) {
+      .axa-grid { grid-template-columns: 1fr; gap: 16px; }
+      .axa-card { padding: 24px 20px; }
+    }
+
     /* KEUNGGULAN / DIFFERENTIATORS */
     .keunggulan { background: var(--white); }
     .ku-wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center; }
@@ -503,6 +535,40 @@
             <div class="feat-item"><span class="feat-check" style="color: var(--amber-600);">→</span> Integrasi langsung ke ekosistem LMS</div>
           </div>
           <div class="p-tags"><span class="tag">AI Production</span><span class="tag">Lokal Avatar</span><span class="tag">SOP Standard</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AXA AI ASSISTANT -->
+  <section class="axa-ai" id="axa-ai">
+    <div class="sec-inner">
+      <div class="sec-header centered fade-up">
+        <div class="axa-ai-badge">✦ AI-POWERED</div>
+        <h2 class="sec-title">AXA AI Assistant</h2>
+        <p class="sec-sub">Asisten cerdas yang membantu HRD bekerja lebih cepat — dari membuat SOP, menyusun laporan, hingga menilai tugas karyawan secara otomatis.</p>
+      </div>
+      <div class="axa-grid fade-up">
+        <div class="axa-card">
+          <div class="axa-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a5af8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3 class="axa-title">AI Pembuatan SOP</h3>
+          <p class="axa-desc">Generate draft SOP lengkap dari deskripsi singkat. AI menyusun struktur, langkah kerja, dan checklist — tinggal review & approve.</p>
+        </div>
+        <div class="axa-card">
+          <div class="axa-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a5af8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><rect x="2" y="2" width="20" height="20" rx="2"/></svg>
+          </div>
+          <h3 class="axa-title">AI Laporan HRD</h3>
+          <p class="axa-desc">Buat laporan training, compliance, dan performa karyawan secara otomatis dari data LMS. Siap presentasi dalam hitungan detik.</p>
+        </div>
+        <div class="axa-card">
+          <div class="axa-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a5af8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3 class="axa-title">AI Evaluasi Performa Karyawan</h3>
+          <p class="axa-desc">Analisis performa training karyawan secara individual — skor, pola kesulitan, dan rekomendasi coaching otomatis berbasis data kuis nyata dari sistem LMS.</p>
         </div>
       </div>
     </div>
