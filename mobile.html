@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <title>Axara — Enterprise LMS & SOP Solution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --white: #ffffff;
+      --gray-50: #f8f9fc;
+      --gray-100: #f2f4f7;
+      --gray-200: #eaecf0;
+      --gray-300: #d0d5dd;
+      --gray-400: #98a2b3;
+      --gray-500: #667085;
+      --gray-600: #475467;
+      --gray-700: #344054;
+      --gray-900: #101828;
+      --navy: #0c111d;
+      --blue: #1570ef;
+      --blue-light: #eff8ff;
+      --emerald: #039855;
+      --emerald-50: #ecfdf3;
+      --amber: #d97706;
+      --amber-50: #fef3c7;
+      --purple: #7a5af8;
+      --r: 6px;
+      --r-lg: 14px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--white); color: var(--gray-700); -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      height: 60px; padding: 0 20px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-logo-mark { width: 28px; height: 28px; border-radius: var(--r); background: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; }
+    .nav-logo-text { font-size: 16px; font-weight: 800; color: var(--navy); letter-spacing: -0.03em; }
+    .nav-logo-text span { font-weight: 400; color: var(--gray-400); }
+    .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
+    .hamburger span { width: 20px; height: 2px; background: var(--navy); border-radius: 2px; display: block; transition: 0.3s; }
+
+    .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; z-index: 999; background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 12px 20px 20px; flex-direction: column; gap: 2px; box-shadow: 0 12px 20px rgba(0,0,0,0.08); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 15px; font-weight: 500; color: var(--gray-600); text-decoration: none; padding: 12px; border-radius: var(--r); }
+    .mobile-menu a:hover { background: var(--gray-100); }
+    .mobile-menu .mm-cta { background: var(--navy); color: #fff !important; text-align: center; margin-top: 8px; font-weight: 600; border-radius: var(--r); }
+
+    /* ─── HERO ─── */
+    .hero { padding: 80px 20px 40px; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--gray-200); border-radius: 99px; padding: 5px 12px; font-size: 11px; font-weight: 600; color: var(--gray-500); margin-bottom: 20px; background: var(--gray-50); }
+    .badge-dot { width: 5px; height: 5px; background: var(--emerald); border-radius: 50%; animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .hero h1 { font-size: 28px; font-weight: 800; line-height: 1.2; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 20px; }
+    .hero h1 em { font-style: normal; color: var(--blue); }
+
+    /* ─── CARD STACK ─── */
+    .card-stack-section { display: flex; align-items: center; justify-content: center; position: relative; height: 280px; margin-bottom: 24px; overflow: visible; }
+    .card-stack-wrap { position: relative; width: 100%; max-width: 340px; height: 280px; display: flex; align-items: center; justify-content: center; animation: cs-float 6s ease-in-out infinite; }
+    @keyframes cs-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+    .sop-card {
+      position: absolute; width: 310px; padding: 12px; border-radius: 16px;
+      background: #fff; box-shadow: 0 16px 40px rgba(15,23,42,0.07);
+      border: 1px solid var(--gray-200); display: flex; flex-direction: column; gap: 10px;
+      transition: all 0.8s cubic-bezier(0.4,0,0.2,1); box-sizing: border-box; pointer-events: none;
+    }
+    .sop-card-video { width: 100%; height: 155px; border-radius: 10px; overflow: hidden; background: var(--gray-50); border: 1px solid var(--gray-100); }
+    .sop-card-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .sop-card-meta { display: flex; gap: 8px; align-items: center; }
+    .sop-dept { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+    .sop-time { font-size: 10px; color: var(--gray-400); }
+    .sop-card-title { font-size: 13px; font-weight: 500; color: var(--navy); line-height: 1.4; }
+
+    .hero-desc { font-size: 14px; color: var(--gray-500); line-height: 1.7; margin-bottom: 28px; }
+    .hero-btns { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .btn-primary { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--navy); color: #fff; padding: 14px 24px; border-radius: var(--r); font-size: 14px; font-weight: 600; text-decoration: none; }
+    .btn-outline { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--white); color: var(--gray-700); padding: 14px 24px; border-radius: var(--r); font-size: 14px; font-weight: 600; text-decoration: none; border: 1px solid var(--gray-300); }
+    .hero-stats { display: flex; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--gray-100); text-align: center; }
+    .hs-val { font-size: 24px; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
+    .hs-val span { color: var(--blue); }
+    .hs-lbl { font-size: 10px; color: var(--gray-400); margin-top: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* ─── LOGOS ─── */
+    .logos { padding: 32px 20px; border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); }
+    .logos-label { text-align: center; font-size: 10px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px; }
+    .logos-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .logo-item { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--gray-300); }
+    .logo-box { width: 22px; height: 22px; border-radius: 4px; background: var(--gray-100); display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 800; color: var(--gray-400); }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 60px 20px; }
+    .sec-tag { font-size: 11px; font-weight: 600; color: var(--blue); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; display: block; }
+    .sec-title { font-size: 24px; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 12px; }
+    .sec-sub { font-size: 14px; color: var(--gray-500); line-height: 1.7; margin-bottom: 32px; }
+
+    /* ─── PRODUK ─── */
+    .produk-card { border: 1px solid var(--gray-200); border-radius: var(--r-lg); padding: 28px 20px; margin-bottom: 16px; }
+    .produk-num { font-size: 11px; font-weight: 700; color: var(--gray-300); margin-bottom: 16px; display: block; font-family: monospace; }
+    .produk-icon { width: 40px; height: 40px; border-radius: var(--r); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .produk-name { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .produk-desc { font-size: 13px; color: var(--gray-500); line-height: 1.7; margin-bottom: 20px; }
+    .feat-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .feat-item { display: flex; gap: 10px; font-size: 13px; color: var(--gray-600); }
+    .feat-check { flex-shrink: 0; color: var(--blue); font-weight: bold; }
+    .p-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: var(--r); background: var(--gray-100); color: var(--gray-600); border: 1px solid var(--gray-200); text-transform: uppercase; }
+
+    /* ─── BENEFITS ─── */
+    .benefit-section { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+    .benefit-grid { display: flex; flex-direction: column; gap: 24px; }
+    .benefit-card { display: flex; gap: 16px; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid var(--gray-200); }
+    .benefit-card:last-child { border-bottom: none; padding-bottom: 0; }
+    .benefit-ic { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .benefit-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .benefit-desc { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+
+    /* ─── KEUNGGULAN ─── */
+    .ku-list { display: flex; flex-direction: column; gap: 24px; margin-bottom: 32px; }
+    .ku-item { display: flex; gap: 16px; }
+    .ku-num { font-size: 12px; font-weight: 700; color: var(--blue); width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .ku-item h4 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .ku-desc { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+
+    .ku-visual { background: var(--navy); border-radius: var(--r-lg); padding: 24px; position: relative; overflow: hidden; }
+    .ku-visual::before { content: ''; position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; background: radial-gradient(circle, rgba(21,112,239,0.15), transparent 70%); border-radius: 50%; }
+    .kv-head { display: flex; align-items: center; gap: 5px; margin-bottom: 20px; }
+    .kv-dot { width: 7px; height: 7px; border-radius: 50%; }
+    .kv-title { font-size: 9px; font-weight: 600; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.1em; margin-left: 6px; }
+    .kv-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .kv-stat { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--r); padding: 12px; }
+    .kv-sv { font-size: 20px; font-weight: 800; color: #fff; }
+    .kv-sv span { color: var(--blue); }
+    .kv-sl { font-size: 9px; color: rgba(255,255,255,0.35); margin-top: 2px; text-transform: uppercase; font-weight: 600; }
+    .kv-bars { display: flex; flex-direction: column; gap: 12px; }
+    .kv-bl { display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+    .kv-bl span:last-child { color: #fff; font-weight: 700; }
+    .kv-b { height: 3px; background: rgba(255,255,255,0.06); border-radius: 99px; overflow: hidden; }
+    .kv-bf { height: 100%; border-radius: 99px; }
+    .kv-live { margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; }
+    .kv-live-txt { font-size: 9px; color: rgba(255,255,255,0.25); text-transform: uppercase; font-weight: 600; }
+    .kv-live-dot { width: 5px; height: 5px; background: var(--emerald); border-radius: 50%; animation: blink 2s infinite; }
+
+    /* ─── VISI MISI ─── */
+    .vm-section { background: var(--gray-50); border-top: 1px solid var(--gray-200); }
+    .vm-visi { background: var(--navy); border-radius: var(--r-lg); padding: 28px; position: relative; overflow: hidden; margin-bottom: 28px; }
+    .vm-visi::before { content: '\201C'; position: absolute; right: 16px; top: 4px; font-size: 100px; font-weight: 900; color: rgba(255,255,255,0.04); line-height: 1; font-family: Georgia, serif; }
+    .vm-eye { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
+    .vm-txt { font-size: 15px; font-weight: 600; line-height: 1.7; color: #fff; position: relative; z-index: 1; }
+    .misi-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--gray-200); }
+    .misi-item:last-child { border-bottom: none; }
+    .misi-num { font-size: 12px; font-weight: 700; color: var(--blue); width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .misi-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .misi-desc { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+
+    /* ─── PRICING ─── */
+    .pricing-section { background: var(--white); }
+    .paket-card { border: 1px solid var(--gray-200); border-radius: 10px; padding: 28px 20px; margin-bottom: 16px; }
+    .paket-card.featured { border-color: var(--navy); border-width: 2px; position: relative; }
+    .paket-card.featured::after { content: 'REKOMENDASI'; position: absolute; top: -11px; left: 20px; background: var(--navy); color: #fff; font-size: 9px; font-weight: 700; padding: 3px 10px; border-radius: var(--r); letter-spacing: 0.05em; }
+    .pk-badge { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: var(--r); display: inline-block; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .pk-badge.starter { background: var(--gray-100); color: var(--gray-600); }
+    .pk-badge.popular { background: var(--blue-light); color: var(--blue); }
+    .pk-badge.enterprise { background: var(--amber-50); color: var(--amber); }
+    .pk-name { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .pk-price { font-size: 28px; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 4px; }
+    .pk-period { font-size: 12px; color: var(--gray-400); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--gray-100); }
+    .pk-feats { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .pk-feat { display: flex; gap: 8px; font-size: 13px; color: var(--gray-600); }
+    .pk-ic { flex-shrink: 0; margin-top: 1px; }
+    .pk-ic.yes { color: var(--emerald); }
+    .pk-ic.no { color: var(--gray-300); }
+    .pk-btn { display: block; text-align: center; padding: 13px; border-radius: var(--r); font-size: 14px; font-weight: 700; text-decoration: none; }
+    .pk-btn.outline { color: var(--navy); border: 1px solid var(--navy); }
+    .pk-btn.solid { background: var(--navy); color: #fff; border: 1px solid var(--navy); }
+
+    /* ─── CTA ─── */
+    .cta { padding: 60px 20px; background: var(--navy); text-align: center; position: relative; overflow: hidden; }
+    .cta::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 300px; height: 300px; background: radial-gradient(circle, rgba(21,112,239,0.1), transparent 70%); border-radius: 50%; }
+    .cta .sec-tag { color: rgba(255,255,255,0.35); }
+    .cta-title { font-size: 24px; font-weight: 800; color: #fff; letter-spacing: -0.02em; margin-bottom: 14px; line-height: 1.2; position: relative; }
+    .cta-sub { font-size: 14px; color: var(--gray-400); line-height: 1.7; margin-bottom: 32px; }
+    .cta-btns { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .btn-white { display: flex; align-items: center; justify-content: center; gap: 8px; background: #fff; color: var(--navy); padding: 14px 24px; border-radius: var(--r); font-size: 14px; font-weight: 700; text-decoration: none; }
+    .btn-ghost { display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.85); padding: 14px 24px; border-radius: var(--r); font-size: 14px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.12); }
+    .cta-contacts { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .cta-contacts a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; }
+
+    /* ─── FOOTER ─── */
+    footer { padding: 40px 20px 24px; border-top: 1px solid var(--gray-200); }
+    .ft-desc { font-size: 13px; color: var(--gray-500); line-height: 1.7; margin-top: 16px; margin-bottom: 32px; }
+    .ft-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+    .ft-col h5 { font-size: 11px; font-weight: 700; color: var(--navy); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .ft-col a { display: block; font-size: 13px; color: var(--gray-500); text-decoration: none; margin-bottom: 8px; }
+    .ft-bottom { padding-top: 20px; border-top: 1px solid var(--gray-200); font-size: 11px; color: var(--gray-400); text-align: center; }
+    .ft-links { display: flex; justify-content: center; gap: 16px; margin-top: 12px; }
+    .ft-links a { color: var(--gray-400); text-decoration: none; font-size: 11px; }
+
+    /* ─── FADE ─── */
+    .fade-up { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="#">
+      <div class="nav-logo-mark">AX</div>
+      <div class="nav-logo-text">AXARA <span>SYSTEM</span></div>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#produk" onclick="closeMenu()">Solusi</a>
+    <a href="#benefit" onclick="closeMenu()">Keunggulan</a>
+    <a href="#paket" onclick="closeMenu()">Harga</a>
+    <a href="#visimisi" onclick="closeMenu()">Visi & Misi</a>
+    <a href="#kontak" class="mm-cta" onclick="closeMenu()">Mulai Konsultasi</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="fade-up">
+      <div class="hero-tag"><div class="badge-dot"></div>Infrastruktur Pembelajaran Korporat</div>
+      <h1>Transformasi Digital Strategis untuk SDM <em>Indonesia.</em></h1>
+    </div>
+
+    <div class="card-stack-section fade-up">
+      <div class="card-stack-wrap" id="cardStackWrap">
+        <div class="sop-card" data-index="0"><div class="sop-card-video"><video src="videos/closing-deal.mp4" autoplay muted loop playsinline></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#3b82f6;background:rgba(59,130,246,0.08);">Sales</span><span class="sop-time">▷ Video ⏱ 6 Min</span></div><div class="sop-card-title">SOP Teknik Closing Deal & Negosiasi</div></div>
+        <div class="sop-card" data-index="1"><div class="sop-card-video"><video src="videos/cashier-service.mp4" autoplay muted loop playsinline></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#10b981;background:rgba(16,185,129,0.08);">Operations</span><span class="sop-time">▷ Video ⏱ 12 Min</span></div><div class="sop-card-title">SOP Standar Pelayanan Kasir</div></div>
+        <div class="sop-card" data-index="2"><div class="sop-card-video"><video src="videos/finance-audit.mp4" autoplay muted loop playsinline></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#7a5af8;background:rgba(122,90,248,0.08);">Finance</span><span class="sop-time">▷ Video ⏱ 10 Min</span></div><div class="sop-card-title">SOP Audit & Pembukuan Keuangan</div></div>
+        <div class="sop-card" data-index="3"><div class="sop-card-video"><video src="videos/workplace-safety.mp4" autoplay muted loop playsinline></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#ef4444;background:rgba(239,68,68,0.08);">K3 & Safety</span><span class="sop-time">▷ Video ⏱ 10 Min</span></div><div class="sop-card-title">SOP Protokol Kesehatan & Keselamatan Kerja</div></div>
+        <div class="sop-card" data-index="4"><div class="sop-card-video"><video src="videos/warehouse.mp4" autoplay muted loop playsinline></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#f59e0b;background:rgba(245,158,11,0.08);">Logistics</span><span class="sop-time">▷ Video ⏱ 12 Min</span></div><div class="sop-card-title">SOP Manajemen Gudang & Inventori</div></div>
+      </div>
+    </div>
+
+    <div class="fade-up">
+      <p class="hero-desc">Platform LMS premium terintegrasi dengan produksi Video SOP berbasis AI untuk efisiensi operasional dan standarisasi kualitas di seluruh lini bisnis Anda.</p>
+      <div class="hero-btns">
+        <a href="#kontak" class="btn-primary">Coba Gratis 14 Hari <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="#produk" class="btn-outline">Pelajari Solusi</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hs-val">24<span>+</span></div><div class="hs-lbl">Klien Korporasi</div></div>
+        <div><div class="hs-val">318<span>+</span></div><div class="hs-lbl">SOP Diproduksi</div></div>
+        <div><div class="hs-val">98<span>%</span></div><div class="hs-lbl">Skor Kepuasan</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS -->
+  <div class="logos">
+    <div class="logos-label">Dipercaya oleh institusi terkemuka di Indonesia</div>
+    <div class="logos-row">
+      <div class="logo-item"><div class="logo-box">MB</div>PT Maju Bersama</div>
+      <div class="logo-item"><div class="logo-box">GM</div>PT Global Mitra</div>
+      <div class="logo-item"><div class="logo-box">SI</div>PT Sinar Indah</div>
+      <div class="logo-item"><div class="logo-box">KJ</div>CV Karya Jaya</div>
+      <div class="logo-item"><div class="logo-box">NU</div>PT Nusantara Utama</div>
+    </div>
+  </div>
+
+  <!-- PRODUK -->
+  <section class="section" id="produk">
+    <span class="sec-tag">Layanan Terintegrasi</span>
+    <h2 class="sec-title fade-up">Ekosistem Pembelajaran yang Komprehensif</h2>
+    <p class="sec-sub fade-up">Kami menggabungkan teknologi platform tercanggih dengan produksi konten berkualitas tinggi untuk hasil pembelajaran yang terukur.</p>
+
+    <div class="produk-card fade-up">
+      <span class="produk-num">01 / PLATFORM</span>
+      <div class="produk-icon" style="background: var(--blue-light);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3 class="produk-name">LMS Axara Executive</h3>
+      <p class="produk-desc">Dashboard manajemen pembelajaran berbasis cloud yang aman, stabil, dan dirancang untuk skalabilitas tinggi tanpa kerumitan teknis.</p>
+      <div class="feat-list">
+        <div class="feat-item"><span class="feat-check">→</span> Dashboard analytics real-time</div>
+        <div class="feat-item"><span class="feat-check">→</span> Tracking completion & sertifikasi otomatis</div>
+        <div class="feat-item"><span class="feat-check">→</span> Multi-cabang & multi-departemen</div>
+        <div class="feat-item"><span class="feat-check">→</span> Keamanan data enterprise</div>
+      </div>
+      <div class="p-tags"><span class="tag">SaaS</span><span class="tag">Enterprise Cloud</span><span class="tag">Multi-Tenant</span></div>
+    </div>
+
+    <div class="produk-card fade-up">
+      <span class="produk-num">02 / CONTENT</span>
+      <div class="produk-icon" style="background: var(--amber-50); color: var(--amber);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+      </div>
+      <h3 class="produk-name">Video SOP & AI Avatar</h3>
+      <p class="produk-desc">Produksi konten edukasi profesional menggunakan AI Avatar untuk standarisasi instruksi kerja yang konsisten.</p>
+      <div class="feat-list">
+        <div class="feat-item"><span class="feat-check" style="color:var(--amber);">→</span> Script SOP standar industri</div>
+        <div class="feat-item"><span class="feat-check" style="color:var(--amber);">→</span> AI Avatar Bahasa Indonesia natural</div>
+        <div class="feat-item"><span class="feat-check" style="color:var(--amber);">→</span> Update cepat tanpa produksi ulang</div>
+        <div class="feat-item"><span class="feat-check" style="color:var(--amber);">→</span> Integrasi langsung ke LMS</div>
+      </div>
+      <div class="p-tags"><span class="tag">AI Production</span><span class="tag">Lokal Avatar</span><span class="tag">SOP Standard</span></div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="section benefit-section" id="benefit">
+    <span class="sec-tag">Mengapa Memilih Kami</span>
+    <h2 class="sec-title fade-up">Efisiensi yang Berbasis Data</h2>
+    <p class="sec-sub fade-up">Lebih dari sekadar software — Axara adalah mitra pertumbuhan yang memastikan investasi pelatihan Anda menghasilkan dampak terukur.</p>
+    <div class="benefit-grid fade-up">
+      <div class="benefit-card"><div class="benefit-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1570ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><h3 class="benefit-title">Implementasi Cepat</h3><p class="benefit-desc">Onboarding penuh dalam waktu kurang dari 5 hari kerja dengan pendampingan teknis eksklusif.</p></div></div>
+      <div class="benefit-card"><div class="benefit-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1570ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><h3 class="benefit-title">Reduksi Biaya Training</h3><p class="benefit-desc">Mengurangi biaya pelatihan konvensional hingga 70% melalui digitalisasi aset pengetahuan.</p></div></div>
+      <div class="benefit-card"><div class="benefit-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1570ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div><h3 class="benefit-title">Hasil yang Terukur</h3><p class="benefit-desc">Data compliance dan completion rate real-time untuk audit internal maupun ISO.</p></div></div>
+      <div class="benefit-card"><div class="benefit-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1570ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div><div><h3 class="benefit-title">Konten Adaptif</h3><p class="benefit-desc">Update video pelatihan dalam hitungan jam. Cukup revisi naskah dan generate ulang via AI.</p></div></div>
+      <div class="benefit-card"><div class="benefit-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1570ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><h3 class="benefit-title">Skalabilitas Nasional</h3><p class="benefit-desc">Setiap karyawan di setiap cabang menerima kualitas pelatihan yang identik.</p></div></div>
+      <div class="benefit-card"><div class="benefit-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1570ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><h3 class="benefit-title">Dukungan Transisi</h3><p class="benefit-desc">Pendampingan penuh dari pembuatan konten SOP hingga pelatihan admin internal.</p></div></div>
+    </div>
+  </section>
+
+  <!-- KEUNGGULAN -->
+  <section class="section">
+    <span class="sec-tag">Keunggulan Axara</span>
+    <h2 class="sec-title fade-up">Apa yang Membuat Kami Berbeda</h2>
+    <div class="ku-list fade-up">
+      <div class="ku-item"><div class="ku-num">1</div><div><h4>Platform & Konten Terintegrasi</h4><p class="ku-desc">Bukan hanya LMS kosong — kami juga memproduksi konten Video SOP berbasis AI end-to-end.</p></div></div>
+      <div class="ku-item"><div class="ku-num">2</div><div><h4>AI Avatar Bahasa Indonesia Natural</h4><p class="ku-desc">Video SOP dengan pelafalan Bahasa Indonesia formal yang mudah dipahami staf lokal.</p></div></div>
+      <div class="ku-item"><div class="ku-num">3</div><div><h4>Sistem Zero-IT Overhead</h4><p class="ku-desc">Dikelola langsung oleh HRD tanpa developer maupun setup server.</p></div></div>
+    </div>
+    <div class="ku-visual fade-up">
+      <div class="kv-head"><div class="kv-dot" style="background:#ef4444;"></div><div class="kv-dot" style="background:#f59e0b;"></div><div class="kv-dot" style="background:#22c55e;"></div><span class="kv-title">Platform Statistics</span></div>
+      <div class="kv-stats"><div class="kv-stat"><div class="kv-sv">84<span>%</span></div><div class="kv-sl">Avg Completion</div></div><div class="kv-stat"><div class="kv-sv">72<span>%</span></div><div class="kv-sl">Cost Redux</div></div></div>
+      <div class="kv-bars">
+        <div><div class="kv-bl"><span>Sales Standard</span><span>89%</span></div><div class="kv-b"><div class="kv-bf" style="width:89%;background:var(--blue);"></div></div></div>
+        <div><div class="kv-bl"><span>Finance Compliance</span><span>94%</span></div><div class="kv-b"><div class="kv-bf" style="width:94%;background:var(--emerald);"></div></div></div>
+        <div><div class="kv-bl"><span>Security SOP</span><span>76%</span></div><div class="kv-b"><div class="kv-bf" style="width:76%;background:var(--purple);"></div></div></div>
+      </div>
+      <div class="kv-live"><div class="kv-live-txt">Aggregated Client Performance</div><div class="kv-live-dot"></div></div>
+    </div>
+  </section>
+
+  <!-- VISI MISI -->
+  <section class="section vm-section" id="visimisi">
+    <span class="sec-tag">Filosofi & Tujuan</span>
+    <h2 class="sec-title fade-up">Kami Bukan Sekadar Vendor Teknologi</h2>
+    <p class="sec-sub fade-up">Axara dibangun untuk mendemokratisasi akses pengetahuan berkualitas bagi setiap lini industri di Indonesia.</p>
+    <div class="vm-visi fade-up"><div class="vm-eye">Visi Kami</div><div class="vm-txt">Menjadi ekosistem pembelajaran digital terdepan yang memberdayakan setiap organisasi di Indonesia untuk belajar tanpa batas ruang, waktu, dan latar belakang teknologi.</div></div>
+    <div class="fade-up">
+      <div class="misi-item"><div class="misi-num">1</div><div><h4 class="misi-title">Aksesibilitas Sederhana</h4><p class="misi-desc">Platform intuitif, aman, dan mudah dioperasikan bahkan tanpa tim ahli teknologi.</p></div></div>
+      <div class="misi-item"><div class="misi-num">2</div><div><h4 class="misi-title">Edukasi Adaptif</h4><p class="misi-desc">Pendekatan berbasis data untuk pelatihan yang presisi dan relevan bagi setiap individu.</p></div></div>
+      <div class="misi-item"><div class="misi-num">3</div><div><h4 class="misi-title">Transformasi End-to-End</h4><p class="misi-desc">Pendampingan penuh dari migrasi konten manual ke digital hingga tim internal mandiri.</p></div></div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section pricing-section" id="paket">
+    <span class="sec-tag">Struktur Investasi</span>
+    <h2 class="sec-title fade-up">Solusi untuk Setiap Skala Bisnis</h2>
+    <p class="sec-sub fade-up">Pilih paket terbaik untuk mendukung akselerasi pembelajaran di perusahaan Anda tanpa biaya tersembunyi.</p>
+    <div class="fade-up">
+      <div class="paket-card">
+        <div class="pk-badge starter">STARTER</div>
+        <h3 class="pk-name">Starter</h3><div class="pk-price">Rp 2-4jt</div><div class="pk-period">per bulan / maks 200 karyawan</div>
+        <div class="pk-feats"><div class="pk-feat"><span class="pk-ic yes">✓</span> Platform LMS Standar</div><div class="pk-feat"><span class="pk-ic yes">✓</span> 5-10 Video SOP Bulanan</div><div class="pk-feat"><span class="pk-ic yes">✓</span> Dashboard Monitoring Dasar</div><div class="pk-feat"><span class="pk-ic no">✗</span> Upload Konten Mandiri</div><div class="pk-feat"><span class="pk-ic no">✗</span> Akses AI Editor Mandiri</div></div>
+        <a href="#kontak" class="pk-btn outline">Pilih Paket</a>
+      </div>
+      <div class="paket-card featured">
+        <div class="pk-badge popular">BUSINESS</div>
+        <h3 class="pk-name">Business</h3><div class="pk-price">Rp 5-10jt</div><div class="pk-period">per bulan / maks 500 karyawan</div>
+        <div class="pk-feats"><div class="pk-feat"><span class="pk-ic yes">✓</span> Semua Fitur Starter</div><div class="pk-feat"><span class="pk-ic yes">✓</span> Upload Konten Mandiri</div><div class="pk-feat"><span class="pk-ic yes">✓</span> Dashboard Analytics Lanjutan</div><div class="pk-feat"><span class="pk-ic yes">✓</span> Kustomisasi Brand Dashboard</div><div class="pk-feat"><span class="pk-ic no">✗</span> Dedicated SLA Support</div></div>
+        <a href="#kontak" class="pk-btn solid">Mulai Trial Sekarang</a>
+      </div>
+      <div class="paket-card">
+        <div class="pk-badge enterprise">ENTERPRISE</div>
+        <h3 class="pk-name">Enterprise</h3><div class="pk-price">Custom</div><div class="pk-period">Karyawan Tak Terbatas / Skala Besar</div>
+        <div class="pk-feats"><div class="pk-feat"><span class="pk-ic yes">✓</span> Akses API Penuh</div><div class="pk-feat"><span class="pk-ic yes">✓</span> Produksi Video AI Tanpa Batas</div><div class="pk-feat"><span class="pk-ic yes">✓</span> Opsi On-premise / Private Cloud</div><div class="pk-feat"><span class="pk-ic yes">✓</span> Jaminan SLA 99.9%</div><div class="pk-feat"><span class="pk-ic yes">✓</span> Prioritas Support 24/7</div></div>
+        <a href="#kontak" class="pk-btn outline">Hubungi Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="kontak">
+    <span class="sec-tag">Hubungi Konsultan Kami</span>
+    <h2 class="cta-title fade-up">Siap Membangun Budaya Belajar Digital?</h2>
+    <p class="cta-sub fade-up">Diskusikan kebutuhan standarisasi operasional dan sistem pembelajaran digital perusahaan Anda.</p>
+    <div class="cta-btns fade-up">
+      <a href="#" class="btn-white">Jadwalkan Demo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#" class="btn-ghost">Mulai Trial 14 Hari</a>
+    </div>
+    <div class="cta-contacts fade-up">
+      <a href="mailto:hello@axara.id">📧 hello@axara.id</a>
+      <a href="#">📱 WhatsApp Hotline</a>
+      <a href="#">📍 Jakarta, Indonesia</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a class="nav-logo" href="#" style="margin-bottom:4px;">
+      <div class="nav-logo-mark">AX</div>
+      <div class="nav-logo-text">AXARA <span>SYSTEM</span></div>
+    </a>
+    <p class="ft-desc">Platform edukasi digital terintegrasi untuk korporasi Indonesia yang mengutamakan kualitas, efisiensi, dan hasil terukur.</p>
+    <div class="ft-nav">
+      <div class="ft-col"><h5>Produk</h5><a href="#produk">LMS Platform</a><a href="#produk">Video SOP AI</a><a href="#benefit">Keunggulan</a><a href="#paket">Harga</a></div>
+      <div class="ft-col"><h5>Perusahaan</h5><a href="#visimisi">Tentang Kami</a><a href="#">Studi Kasus</a><a href="#kontak">Hubungi Kami</a></div>
+    </div>
+    <div class="ft-bottom">
+      <div>© 2025 Axara Digital System. All rights reserved.</div>
+      <div class="ft-links"><a href="#">LinkedIn</a><a href="#">Twitter</a><a href="#">Instagram</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const s = hamburger.querySelectorAll('span');
+      if (mobileMenu.classList.contains('open')) { s[0].style.transform='rotate(45deg) translate(5px,5px)'; s[1].style.opacity='0'; s[2].style.transform='rotate(-45deg) translate(5px,-5px)'; }
+      else { s[0].style.transform='none'; s[1].style.opacity='1'; s[2].style.transform='none'; }
+    });
+    function closeMenu() { mobileMenu.classList.remove('open'); const s=hamburger.querySelectorAll('span'); s[0].style.transform='none'; s[1].style.opacity='1'; s[2].style.transform='none'; }
+
+    // Card Stack
+    (function(){
+      const cards = document.querySelectorAll('#cardStackWrap .sop-card');
+      const total = cards.length;
+      let idx = 0;
+      function apply(){
+        cards.forEach((c,i)=>{
+          let d=(i-idx+total)%total;
+          if(d===total-1){Object.assign(c.style,{transform:'translate(200px,-20px) rotate(12deg) scale(0.9)',opacity:'0',zIndex:'10',pointerEvents:'none',transition:'all 0.8s cubic-bezier(0.4,0,0.2,1)'});}
+          else if(d>=3){Object.assign(c.style,{transform:'translate(40px,30px) scale(0.8) rotate(6deg)',opacity:'0',zIndex:'0',pointerEvents:'none',transition:'all 0.8s cubic-bezier(0.4,0,0.2,1)'});}
+          else if(d===0){Object.assign(c.style,{transform:'perspective(800px) rotate(-2deg) scale(1)',opacity:'1',zIndex:'5',pointerEvents:'auto',boxShadow:'0 16px 40px rgba(15,23,42,0.07)',transition:'all 0.8s cubic-bezier(0.4,0,0.2,1)'});}
+          else if(d===1){Object.assign(c.style,{transform:'translate(10px,12px) scale(0.95) rotate(2deg)',opacity:'0.9',zIndex:'4',pointerEvents:'none',transition:'all 0.8s cubic-bezier(0.4,0,0.2,1)'});}
+          else if(d===2){Object.assign(c.style,{transform:'translate(20px,24px) scale(0.90) rotate(5deg)',opacity:'0.65',zIndex:'3',pointerEvents:'none',transition:'all 0.8s cubic-bezier(0.4,0,0.2,1)'});}
+        });
+      }
+      apply();
+      setInterval(()=>{idx=(idx+1)%total;apply();},6000);
+    })();
+
+    // Fade
+    const obs = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
+    document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+    setTimeout(()=>document.querySelectorAll('.fade-up:not(.visible)').forEach(el=>el.classList.add('visible')),2000);
+  </script>
+</body>
+</html>
