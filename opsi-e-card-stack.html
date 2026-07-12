@@ -1203,8 +1203,36 @@
 
       form.addEventListener('submit', (e) => {
         e.preventDefault();
+        
+        const name = document.getElementById('clientName').value;
+        const company = document.getElementById('companyName').value;
+        const email = document.getElementById('clientEmail').value;
+        const phone = document.getElementById('clientPhone').value;
+        const scale = document.getElementById('employeeScale').value;
+        
+        // 1. WhatsApp Message Formulation
+        const text = `Halo Axara, saya ingin menjadwalkan demo eksklusif.\n\nBerikut data perusahaan saya:\n• Nama Lengkap: ${name}\n• Nama Perusahaan: ${company}\n• Email Kantor: ${email}\n• Nomor WhatsApp: ${phone}\n• Jumlah Karyawan: ${scale}`;
+        const waUrl = `https://wa.me/6281128013353?text=${encodeURIComponent(text)}`;
+        
+        // 2. Email Notification (FormSubmit backend)
+        fetch('https://formsubmit.co/ajax/hello@axara.id', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            Nama: name,
+            Perusahaan: company,
+            Email: email,
+            WhatsApp: phone,
+            Skala_Karyawan: scale,
+            _subject: `Permintaan Demo Baru - ${company}`
+          })
+        }).catch(err => console.log('Email delivery deferred:', err));
+        
+        // 3. UI Success Transition & WhatsApp Redirection
         form.style.display = 'none';
         successState.style.display = 'flex';
+        
+        window.open(waUrl, '_blank');
       });
     })();
 
