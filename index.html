@@ -61,9 +61,10 @@
     .nav-logo { display: flex; align-items: center; text-decoration: none; }
     .nav-logo-svg { height: 18px; width: auto; }
     .nav-logo-svg path, .nav-logo-svg polygon:not([fill]) { fill: var(--navy-900); }
-    .nav-center { display: flex; align-items: center; gap: 8px; }
+    .nav-center { display: flex; align-items: center; gap: 8px; margin-left: auto; margin-right: 24px; }
     .nav-center a { font-size: 12px; font-weight: 500; color: var(--gray-600); text-decoration: none; padding: 6px 14px; border-radius: var(--r-sm); transition: all 0.2s; }
     .nav-center a:hover { color: var(--navy-900); }
+    .nav-center a.active { font-weight: 700; color: var(--accent-blue) !important; }
     .nav-right { display: flex; align-items: center; gap: 16px; }
     .btn-login { font-size: 12px; font-weight: 500; color: var(--gray-600); text-decoration: none; padding: 6px 14px; transition: all 0.2s; }
     .btn-login:hover { color: var(--navy-900); }
@@ -1190,6 +1191,25 @@
         form.style.display = 'none';
         successState.style.display = 'flex';
       });
+    })();
+
+    // Scroll Spy for Navigation Links
+    (function() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-center a');
+
+      function changeActiveLink() {
+        let index = sections.length;
+        while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
+        navLinks.forEach((link) => link.classList.remove('active'));
+        if (index >= 0 && sections[index]) {
+          const id = sections[index].getAttribute('id');
+          const activeLink = document.querySelector(`.nav-center a[href="#${id}"]`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      }
+      changeActiveLink();
+      window.addEventListener('scroll', changeActiveLink);
     })();
 
     // Original card stack code
