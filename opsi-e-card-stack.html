@@ -343,7 +343,7 @@
     .pk-badge.popular { background: var(--accent-blue-light); color: var(--accent-blue); }
     .pk-badge.enterprise { background: var(--amber-50); color: var(--amber-600); }
     .pk-name { font-size: 18px; font-weight: 700; color: var(--navy-900); margin-bottom: 12px; }
-    .pk-price { font-size: 32px; font-weight: 800; color: var(--navy-900); letter-spacing: -0.02em; margin-bottom: 6px; }
+    .pk-price { font-size: 32px; font-weight: 800; color: var(--navy-900); letter-spacing: -0.02em; margin-bottom: 6px; filter: blur(5px); user-select: none; }
     .pk-period { font-size: 13px; color: var(--gray-400); margin-bottom: 32px; border-bottom: 1px solid var(--gray-100); padding-bottom: 32px; font-weight: 500; }
     .pk-feats { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; flex-grow: 1; }
     .pk-feat { display: flex; gap: 10px; font-size: 14px; align-items: flex-start; color: var(--gray-600); }
@@ -933,47 +933,50 @@
         <div class="paket-card">
           <div class="pk-badge starter">STARTER</div>
           <h3 class="pk-name">Starter</h3>
-          <div class="pk-price">Rp 3jt</div>
-          <div class="pk-period">per bulan / maks 200 karyawan</div>
+          <div class="pk-price">Rp 3.000.000</div>
+          <div class="pk-period">per bulan</div>
           <div class="pk-feats">
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Single Department</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Unlimited SOP (PPT)</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Hosting 5 Video SOP</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> 1 User Admin</div>
+            <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Maks 200 Karyawan</div>
             <div class="pk-feat"><span class="pk-feat-ic no">✗</span> Sertifikasi Kelulusan</div>
           </div>
-          <a href="#kontak" class="pk-btn outline">Pilih Paket</a>
+          <a href="https://wa.me/6281128013353?text=Halo%20Myaxara%2C%20saya%20tertarik%20untuk%20berlangganan%20paket%20Starter%20(Rp%203jt%2Fbulan).%20Bagaimana%20langkah%20selanjutnya%3F" target="_blank" rel="noopener noreferrer" class="pk-btn outline">Pilih Paket</a>
         </div>
         
         <div class="paket-card featured">
           <div class="pk-badge popular">BUSINESS</div>
           <h3 class="pk-name">Business</h3>
-          <div class="pk-price">Rp 6,5jt</div>
-          <div class="pk-period">per bulan / maks 500 karyawan</div>
+          <div class="pk-price">Rp 6.500.000</div>
+          <div class="pk-period">per bulan</div>
           <div class="pk-feats">
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Multi Department</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Unlimited SOP (PPT)</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Hosting 12-15 Video (Maks 5 Mnt/Video)</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Sertifikat (Nama, Tanpa Logo)</div>
+            <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Maks 500 Karyawan</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> 3 User Admin (Lebih = Overage)</div>
           </div>
-          <a href="#kontak" class="pk-btn solid">Mulai Trial Sekarang</a>
+          <a href="https://wa.me/6281128013353?text=Halo%20Myaxara%2C%20saya%20ingin%20mendiskusikan%20implementasi%20paket%20Business%20(Rp%206%2C5jt%2Fbulan)%20untuk%20perusahaan%20kami." target="_blank" rel="noopener noreferrer" class="pk-btn solid">Hubungi Kami</a>
         </div>
         
         <div class="paket-card">
           <div class="pk-badge enterprise">ENTERPRISE</div>
           <h3 class="pk-name">Enterprise</h3>
-          <div class="pk-price">Mulai Rp 15jt</div>
-          <div class="pk-period">Karyawan Tak Terbatas / Skala Besar</div>
+          <div class="pk-price">Rp 15.000.000</div>
+          <div class="pk-period">per bulan</div>
           <div class="pk-feats">
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Multi Department</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Hosting 18-20 Video (Maks 15 Mnt/Video)</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Sertifikat + Logo Perusahaan</div>
+            <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Karyawan Tak Terbatas</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> 8 User Admin (Lebih = Overage)</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Dedicated Server & SSO SAML 2.0</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Jaminan SLA 99.9% & Prioritas 24/7</div>
           </div>
-          <a href="#kontak" class="pk-btn outline">Hubungi Sales</a>
+          <a href="https://wa.me/6281128013353?text=Halo%20Myaxara%2C%20kami%20tertarik%20dengan%20paket%20Enterprise%20(Mulai%20Rp%2015jt%2Fbulan)%20dan%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20kustom%20skala%20besar." target="_blank" rel="noopener noreferrer" class="pk-btn outline">Ajukan Penawaran</a>
         </div>
       </div>
     </div>
