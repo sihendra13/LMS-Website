@@ -131,7 +131,7 @@
     }
     @keyframes hv-ring-spin { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
 
-    /* STATIC HERO FEATURE TAGS */
+    /* STATIC HERO CHIPS */
     .hero-feature-tags {
       margin-top: 32px;
       display: flex;
@@ -140,19 +140,34 @@
       flex-wrap: nowrap;
       white-space: nowrap;
     }
-    .hero-tag-item {
+    .hero-chip-item {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--r-full);
+      gap: 7px;
+      padding: 7px 16px;
+      border-radius: 99px;
       font-size: 12px;
-      font-weight: 600;
-      color: var(--navy-900);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      font-weight: 700;
       white-space: nowrap;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-chip-item:hover {
+      transform: translateY(-2px);
+    }
+    .hero-chip-purple {
+      background: #f5f3ff;
+      border: 1px solid #ddd6fe;
+      color: #6b21a8;
+    }
+    .hero-chip-blue {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+    }
+    .hero-chip-green {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
     }
 
     .card-stack-wrap {
@@ -652,9 +667,9 @@
           <a href="#produk" class="btn-outline">Pelajari Solusi</a>
         </div>
         <div class="hero-feature-tags">
-          <span class="hero-tag-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a5af8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> 30-Sec AI SOP Generator</span>
-          <span class="hero-tag-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1570ef" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg> Video SOP Bahasa Indonesia</span>
-          <span class="hero-tag-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Real-Time Compliance 99.8%</span>
+          <span class="hero-chip-item hero-chip-purple"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a5af8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> 30-Sec AI SOP Generator</span>
+          <span class="hero-chip-item hero-chip-blue"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1570ef" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg> Video SOP Bahasa Indonesia</span>
+          <span class="hero-chip-item hero-chip-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Real-Time Compliance 99.8%</span>
         </div>
       </div>
       
