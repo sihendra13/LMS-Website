@@ -136,14 +136,15 @@
       margin-top: 32px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
+      gap: 10px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
     }
     .hero-tag-item {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 7px 14px;
+      gap: 6px;
+      padding: 6px 12px;
       background: rgba(255, 255, 255, 0.9);
       border: 1px solid var(--gray-200);
       border-radius: var(--r-full);
@@ -151,17 +152,8 @@
       font-weight: 600;
       color: var(--navy-900);
       box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      white-space: nowrap;
     }
-    .badge-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      display: inline-block;
-      position: relative;
-    }
-    .badge-dot.pulse-purple { background: #7a5af8; box-shadow: 0 0 8px #7a5af8; }
-    .badge-dot.pulse-blue { background: #1570ef; box-shadow: 0 0 8px #1570ef; }
-    .badge-dot.pulse-green { background: #10b981; box-shadow: 0 0 8px #10b981; }
 
     .card-stack-wrap {
       position: relative; width: 600px; height: 580px;
@@ -660,9 +652,9 @@
           <a href="#produk" class="btn-outline">Pelajari Solusi</a>
         </div>
         <div class="hero-feature-tags">
-          <span class="hero-tag-item"><span class="badge-dot pulse-purple"></span>✨ 30-Sec AI SOP Generator</span>
-          <span class="hero-tag-item"><span class="badge-dot pulse-blue"></span>🎥 Video SOP Bahasa Indonesia</span>
-          <span class="hero-tag-item"><span class="badge-dot pulse-green"></span>📊 Real-Time Compliance 99.8%</span>
+          <span class="hero-tag-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a5af8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> 30-Sec AI SOP Generator</span>
+          <span class="hero-tag-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1570ef" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg> Video SOP Bahasa Indonesia</span>
+          <span class="hero-tag-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Real-Time Compliance 99.8%</span>
         </div>
       </div>
       
