@@ -130,6 +130,67 @@
       opacity: 0.35; z-index: 0; animation: hv-ring-spin 50s linear infinite;
     }
     @keyframes hv-ring-spin { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+
+    /* FLOATING HERO BADGES */
+    .hero-badge {
+      position: absolute;
+      z-index: 10;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: var(--r-full);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy-900);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+    }
+    .badge-dot.pulse-purple { background: #7a5af8; box-shadow: 0 0 8px #7a5af8; }
+    .badge-dot.pulse-blue { background: #1570ef; box-shadow: 0 0 8px #1570ef; }
+    .badge-dot.pulse-green { background: #10b981; box-shadow: 0 0 8px #10b981; }
+
+    .float-badge-1 {
+      top: 25px;
+      left: -15px;
+      animation: floatBadge1 4s ease-in-out infinite alternate;
+    }
+    .float-badge-2 {
+      top: 45%;
+      right: -20px;
+      animation: floatBadge2 5s ease-in-out infinite alternate;
+    }
+    .float-badge-3 {
+      bottom: 35px;
+      left: -5px;
+      animation: floatBadge3 4.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatBadge1 {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-10px); }
+    }
+    @keyframes floatBadge2 {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(12px); }
+    }
+    @keyframes floatBadge3 {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-8px); }
+    }
+
     .card-stack-wrap {
       position: relative; width: 600px; height: 580px;
       display: flex; align-items: center; justify-content: center;
@@ -639,6 +700,19 @@
       <div class="hero-visual fade-up" style="transition-delay: 0.15s;" id="cardStackContainer">
         <div class="hv-bg-dots"></div>
         <div class="hv-bg-ring"></div>
+        <!-- Floating Futuristic Badges -->
+        <div class="hero-badge float-badge-1">
+          <span class="badge-dot pulse-purple"></span>
+          <span>✨ 30-Sec AI SOP Generator</span>
+        </div>
+        <div class="hero-badge float-badge-2">
+          <span class="badge-dot pulse-blue"></span>
+          <span>🎥 Video SOP Bahasa Indonesia</span>
+        </div>
+        <div class="hero-badge float-badge-3">
+          <span class="badge-dot pulse-green"></span>
+          <span>📊 Real-Time Compliance 99.8%</span>
+        </div>
         <div class="card-stack-wrap" id="cardStackWrap">
           <!-- Card 0 -->
           <div class="sop-card" data-index="0">
