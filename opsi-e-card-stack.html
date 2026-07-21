@@ -382,8 +382,14 @@
       object-position: center 20%;
       transition: transform 0.4s ease;
     }
+    .team-photo-wrap img.flip-x {
+      transform: scaleX(-1);
+    }
     .team-card:hover .team-photo-wrap img {
       transform: scale(1.04);
+    }
+    .team-card:hover .team-photo-wrap img.flip-x {
+      transform: scaleX(-1) scale(1.04);
     }
     .team-name { font-size: 22px; font-weight: 800; color: var(--navy-900); margin-bottom: 4px; letter-spacing: -0.01em; }
     .team-role { font-size: 13px; font-weight: 600; color: var(--gray-500); margin-bottom: 14px; line-height: 1.4; min-height: 38px; }
@@ -1134,7 +1140,7 @@
         <!-- 3. Hendra Fitriadi -->
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="images/team/hendra-fitriadi.jpg" alt="Hendra Fitriadi">
+            <img src="images/team/hendra-fitriadi.jpg" alt="Hendra Fitriadi" class="flip-x">
           </div>
           <h3 class="team-name">Hendra Fitriadi</h3>
           <div class="team-role">Head of Product Design</div>
