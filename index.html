@@ -554,21 +554,28 @@
 
     /* RESPONSIVE */
     @media (max-width: 960px) {
-      nav { padding: 0 24px; }
+      nav { padding: 0 20px; }
       .nav-center, .nav-right .btn-login, .nav-right .btn-cta-nav { display: none; }
       .hamburger { display: flex; }
-      section { padding: 80px 24px; }
-      .hero { padding: 120px 24px 80px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      section { padding: 60px 20px; }
+      .hero { padding: 90px 20px 50px; text-align: center; }
+      .hero-inner { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+      .hero-tag { margin-left: auto; margin-right: auto; }
+      h1 { font-size: clamp(26px, 7vw, 34px); text-align: center; line-height: 1.25; }
+      .hero-p { font-size: 15px; margin: 0 auto 28px; text-align: center; width: 100%; max-width: 100%; }
+      .hero-btns { justify-content: center; flex-direction: column; gap: 10px; width: 100%; max-width: 320px; margin: 0 auto 28px; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; text-align: center; }
+      .hero-feature-tags { flex-wrap: wrap; white-space: normal; justify-content: center; gap: 8px; margin-top: 24px; width: 100%; }
+      .hero-chip-item { white-space: normal; text-align: center; font-size: 11px; padding: 6px 12px; }
       .hero-visual { display: none; }
-      .mobile-card-stack { display: flex; align-items: center; justify-content: center; margin: 24px auto 32px; position: relative; height: 280px; width: 100%; }
-      .mobile-card-stack .card-stack-wrap { width: 270px; height: 270px; margin: 0 auto; position: relative; display: flex; align-items: center; justify-content: center; }
-      .mobile-card-stack .sop-card { width: 270px; padding: 12px; top: 0; left: 0; margin: 0; }
-      .mobile-card-stack .sop-card-video { height: 145px; border-radius: 10px; }
-      .mobile-card-stack .sop-card-meta { gap: 8px; }
-      .mobile-card-stack .sop-dept { font-size: 10px; padding: 2px 8px; }
-      .mobile-card-stack .sop-time { font-size: 10px; }
-      .mobile-card-stack .sop-card-title { font-size: 13px; }
+      .mobile-card-stack { display: flex; align-items: center; justify-content: center; margin: 20px auto 28px; position: relative; height: 270px; width: 100%; }
+      .mobile-card-stack .card-stack-wrap { width: 260px; height: 260px; margin: 0 auto; position: relative; display: flex; align-items: center; justify-content: center; }
+      .mobile-card-stack .sop-card { width: 250px; padding: 10px; top: 0; left: 5px; margin: 0; }
+      .mobile-card-stack .sop-card-video { height: 135px; border-radius: 10px; }
+      .mobile-card-stack .sop-card-meta { gap: 6px; }
+      .mobile-card-stack .sop-dept { font-size: 9px; padding: 2px 6px; }
+      .mobile-card-stack .sop-time { font-size: 9px; }
+      .mobile-card-stack .sop-card-title { font-size: 12px; }
       .mobile-card-stack .hv-bg-dots { display: none; }
       .produk-grid { grid-template-columns: 1fr; gap: 24px; }
       .benefit-grid { grid-template-columns: 1fr; gap: 32px; margin-top: 40px; }
