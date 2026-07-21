@@ -412,22 +412,83 @@
     .misi-desc { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
 
     /* KOMPARASI SECTION */
-    .komparasi { padding: 100px 6%; background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
-    .komparasi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+    .komparasi { padding: 100px 6%; background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); position: relative; }
+    .komparasi-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 32px; margin-top: 48px; align-items: stretch; }
     @media (max-width: 900px) { .komparasi-grid { grid-template-columns: 1fr; } }
-    .comp-card { background: #ffffff; border-radius: var(--r-md); padding: 40px; border: 1px solid var(--gray-200); position: relative; box-shadow: var(--shadow-sm); }
-    .comp-card.old { border-color: rgba(239, 68, 68, 0.2); background: #fef2f2; }
-    .comp-card.new { border-color: var(--accent-blue); background: #ffffff; box-shadow: 0 16px 40px rgba(21, 112, 239, 0.12); }
+    .comp-card { border-radius: 20px; padding: 40px; border: 1px solid var(--gray-200); position: relative; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; }
+    
+    /* Cara Lama Card */
+    .comp-card.old { border-color: rgba(239, 68, 68, 0.25); background: #fff8f8; box-shadow: 0 4px 20px rgba(239, 68, 68, 0.03); }
+    .comp-badge.old { background: #fee2e2; color: #dc2626; border: 1px solid rgba(220,38,38,0.15); }
+    .comp-ic.old { background: #fee2e2; color: #dc2626; }
+    
+    /* Solusi Myaxara Card - DARK GLASS GLOW */
+    .comp-card.new {
+      background: linear-gradient(145deg, #0b0f19 0%, #111827 100%);
+      border: 1px solid rgba(21, 112, 239, 0.4);
+      box-shadow: 0 24px 60px rgba(11, 15, 25, 0.4), inset 0 1px 1px rgba(255,255,255,0.15);
+      position: relative; overflow: hidden;
+    }
+    .comp-card.new::before {
+      content: ''; position: absolute; top: -80px; right: -80px; width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(122,90,248,0.3), transparent 70%);
+      border-radius: 50%; pointer-events: none;
+    }
+    .comp-badge.new { background: rgba(21, 112, 239, 0.2); color: #53b1fd; border: 1px solid rgba(83, 177, 253, 0.3); }
+    .comp-card.new .comp-title { color: #ffffff; }
+    .comp-card.new .comp-item { color: rgba(255,255,255,0.75); }
+    .comp-card.new .comp-item strong { color: #ffffff; }
+    .comp-ic.new { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); box-shadow: 0 0 12px rgba(16, 185, 129, 0.2); }
+    .comp-tag-boost {
+      position: absolute; top: -14px; right: 24px;
+      background: linear-gradient(135deg, #7a5af8, #1570ef);
+      color: #fff; font-size: 11px; font-weight: 800; padding: 5px 16px; border-radius: var(--r-full);
+      box-shadow: 0 4px 16px rgba(122,90,248,0.4); letter-spacing: 0.05em;
+    }
+
+    /* MINI UI MOCKUPS INSIDE CARDS */
+    .comp-mini-graphic {
+      margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .comp-card.new .comp-mini-graphic {
+      border-top-color: rgba(255,255,255,0.08);
+    }
+    .mini-ui-box {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; backdrop-filter: blur(8px);
+    }
+    .mini-ui-old {
+      background: rgba(254, 226, 226, 0.4); border: 1px dashed rgba(239, 68, 68, 0.3);
+      border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .mini-stamp-red {
+      font-size: 10px; font-weight: 800; color: #dc2626; background: #fee2e2;
+      border: 1px solid #fca5a5; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .mini-stamp-green {
+      font-size: 10px; font-weight: 800; color: #10b981; background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3); padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+    }
+    .mini-ui-left { display: flex; align-items: center; gap: 12px; }
+    .mini-ui-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .mini-ui-title { font-size: 13px; font-weight: 700; color: #fff; }
+    .mini-ui-sub { font-size: 11px; color: rgba(255,255,255,0.5); }
+
+    /* EFFICIENCY BANNER AT BOTTOM */
+    .comp-banner {
+      margin-top: 40px; background: #ffffff; border: 1px solid var(--gray-200);
+      border-radius: 16px; padding: 20px 32px; display: flex; align-items: center; justify-content: center;
+      gap: 12px; text-align: center; box-shadow: var(--shadow-sm);
+    }
+    .comp-banner-txt { font-size: 14px; font-weight: 700; color: var(--navy-900); }
+    .comp-banner-txt span { color: var(--accent-blue); }
     .comp-badge { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: var(--r-full); display: inline-block; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; }
-    .comp-badge.old { background: #fee2e2; color: #dc2626; }
-    .comp-badge.new { background: var(--accent-blue-light); color: var(--accent-blue); }
-    .comp-tag-boost { position: absolute; top: -14px; right: 24px; background: linear-gradient(135deg, #7a5af8, #1570ef); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 14px; border-radius: var(--r-full); box-shadow: 0 4px 12px rgba(122,90,248,0.3); }
     .comp-title { font-size: 22px; font-weight: 800; color: var(--navy-900); margin-bottom: 24px; }
     .comp-list { display: flex; flex-direction: column; gap: 20px; }
     .comp-item { display: flex; gap: 14px; font-size: 14px; line-height: 1.5; color: var(--gray-700); }
     .comp-ic { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 800; font-size: 12px; margin-top: 2px; }
-    .comp-ic.old { background: #fee2e2; color: #dc2626; }
-    .comp-ic.new { background: #d1fae5; color: #059669; }
     .comp-item strong { color: var(--navy-900); display: block; margin-bottom: 2px; font-size: 15px; }
 
     /* PAKET / PRICING */
@@ -848,76 +909,112 @@
       <div class="komparasi-grid fade-up">
         <!-- Kotak Cara Lama -->
         <div class="comp-card old">
-          <span class="comp-badge old">❌ METODE KONVENSIONAL</span>
-          <h3 class="comp-title">Cara Lama (Manual & Ribet)</h3>
-          <div class="comp-list">
-            <div class="comp-item">
-              <div class="comp-ic old">✕</div>
-              <div>
-                <strong>Pembuatan SOP Lambat</strong>
-                Mengetik manual di Word/PPT memakan waktu hingga 2–3 minggu per modul.
+          <div>
+            <span class="comp-badge old">❌ METODE KONVENSIONAL</span>
+            <h3 class="comp-title">Cara Lama (Manual & Ribet)</h3>
+            <div class="comp-list">
+              <div class="comp-item">
+                <div class="comp-ic old">✕</div>
+                <div>
+                  <strong>Pembuatan SOP Lambat</strong>
+                  Mengetik manual di Word/PPT memakan waktu hingga 2–3 minggu per modul.
+                </div>
+              </div>
+              <div class="comp-item">
+                <div class="comp-ic old">✕</div>
+                <div>
+                  <strong>Media Membosankan</strong>
+                  Dokumen PDF tebal & kertas print yang jarang dibaca oleh staf operasional.
+                </div>
+              </div>
+              <div class="comp-item">
+                <div class="comp-ic old">✕</div>
+                <div>
+                  <strong>Training Tatap Muka Mahal</strong>
+                  Mengumpulkan karyawan di ruangan menyita waktu operasional & biaya tinggi.
+                </div>
+              </div>
+              <div class="comp-item">
+                <div class="comp-ic old">✕</div>
+                <div>
+                  <strong>Tanpa Analytics Riil</strong>
+                  Manajemen tidak memiliki data pemahaman & tingkat kelulusan karyawan.
+                </div>
               </div>
             </div>
-            <div class="comp-item">
-              <div class="comp-ic old">✕</div>
-              <div>
-                <strong>Media Membosankan</strong>
-                Dokumen PDF tebal & kertas print yang jarang dibaca oleh staf operasional.
+          </div>
+          <div class="comp-mini-graphic">
+            <div class="mini-ui-old">
+              <div class="mini-ui-left">
+                <div class="mini-ui-icon" style="background: #fee2e2; color: #dc2626;">📄</div>
+                <div>
+                  <div class="mini-ui-title" style="color: #991b1b; font-size: 13px;">Dokumen SOP Cetak / PDF</div>
+                  <div class="mini-ui-sub" style="color: #b91c1c;">Revisi Lambat & Biaya Cetak Tinggi</div>
+                </div>
               </div>
-            </div>
-            <div class="comp-item">
-              <div class="comp-ic old">✕</div>
-              <div>
-                <strong>Training Tatap Muka Mahal</strong>
-                Mengumpulkan karyawan di ruangan menyita waktu operasional & biaya tinggi.
-              </div>
-            </div>
-            <div class="comp-item">
-              <div class="comp-ic old">✕</div>
-              <div>
-                <strong>Tanpa Analytics Riil</strong>
-                Manajemen tidak memiliki data pemahaman & tingkat kelulusan karyawan.
-              </div>
+              <div class="mini-stamp-red">MANUAL & COSTLY</div>
             </div>
           </div>
         </div>
 
-        <!-- Kotak Myaxara -->
+        <!-- Kotak Myaxara (DARK GLASS GLOW) -->
         <div class="comp-card new">
           <div class="comp-tag-boost">✨ 10x LEBIH EFISIEN</div>
-          <span class="comp-badge new">✨ EKOSISTEM MYAXARA</span>
-          <h3 class="comp-title">Solusi Myaxara (Otomatis & AI)</h3>
-          <div class="comp-list">
-            <div class="comp-item">
-              <div class="comp-ic new">✓</div>
-              <div>
-                <strong>SOP Instan 30 Detik</strong>
-                AI menyusun draft SOP & naskah instruksi otomatis dalam hitungan detik.
+          <div>
+            <span class="comp-badge new">✨ EKOSISTEM MYAXARA</span>
+            <h3 class="comp-title">Solusi Myaxara (Otomatis & AI)</h3>
+            <div class="comp-list">
+              <div class="comp-item">
+                <div class="comp-ic new">✓</div>
+                <div>
+                  <strong>SOP Instan 30 Detik</strong>
+                  AI menyusun draft SOP & naskah instruksi otomatis dalam hitungan detik.
+                </div>
               </div>
-            </div>
-            <div class="comp-item">
-              <div class="comp-ic new">✓</div>
-              <div>
-                <strong>Video Avatar AI Interaktif</strong>
-                SOP disajikan dalam bentuk video dalam Bahasa Indonesia yang menarik.
+              <div class="comp-item">
+                <div class="comp-ic new">✓</div>
+                <div>
+                  <strong>Video Avatar AI Interaktif</strong>
+                  SOP disajikan dalam bentuk video dalam Bahasa Indonesia yang menarik.
+                </div>
               </div>
-            </div>
-            <div class="comp-item">
-              <div class="comp-ic new">✓</div>
-              <div>
-                <strong>Akses Kapan Saja via HP</strong>
-                Karyawan belajar mandiri dari smartphone tanpa mengganggu jam kerja operasional.
+              <div class="comp-item">
+                <div class="comp-ic new">✓</div>
+                <div>
+                  <strong>Akses Kapan Saja via HP</strong>
+                  Karyawan belajar mandiri dari smartphone tanpa mengganggu jam kerja operasional.
+                </div>
               </div>
-            </div>
-            <div class="comp-item">
-              <div class="comp-ic new">✓</div>
-              <div>
-                <strong>Laporan Analytics Real-Time</strong>
-                Kuis otomatis & data kelulusan terukur yang siap digunakan untuk audit ISO & HRD.
+              <div class="comp-item">
+                <div class="comp-ic new">✓</div>
+                <div>
+                  <strong>Laporan Analytics Real-Time</strong>
+                  Kuis otomatis & data kelulusan terukur yang siap digunakan untuk audit ISO & HRD.
+                </div>
               </div>
             </div>
           </div>
+          <div class="comp-mini-graphic">
+            <div class="mini-ui-box">
+              <div class="mini-ui-left">
+                <div class="mini-ui-icon" style="background: rgba(122,90,248,0.25); color: #a78bfa;">⚡</div>
+                <div>
+                  <div class="mini-ui-title">AI Video Engine Active</div>
+                  <div class="mini-ui-sub">Generasi SOP Video Otomatis</div>
+                </div>
+              </div>
+              <div class="mini-stamp-green">30-SEC AUTOMATED</div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- EFFICIENCY BANNER -->
+      <div class="comp-banner fade-up">
+        <div class="comp-banner-txt">
+          🚀 <strong>Dampak Nyata:</strong> Perusahaan menghemat hingga <span>85% waktu pembuatan SOP</span> dan <span>70% biaya pelatihan operasional</span> sejak bulan pertama.
+        </div>
+      </div>
       </div>
     </div>
   </section>
