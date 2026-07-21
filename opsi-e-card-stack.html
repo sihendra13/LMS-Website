@@ -356,6 +356,40 @@
     .kv-live-txt { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; }
     .kv-live-dot { width: 8px; height: 8px; background: #12b76a; border-radius: 50%; box-shadow: 0 0 12px #12b76a; animation: blink 2s infinite; }
 
+    /* OUR TEAM SECTION */
+    .team { padding: 100px 6%; background: var(--white); border-top: 1px solid var(--gray-200); }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
+    @media (max-width: 900px) { .team-grid { grid-template-columns: 1fr; } }
+    .team-card {
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s;
+    }
+    .team-photo-wrap {
+      width: 100%;
+      aspect-ratio: 4 / 4.5;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      background: var(--gray-100);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .team-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform 0.4s ease;
+    }
+    .team-card:hover .team-photo-wrap img {
+      transform: scale(1.04);
+    }
+    .team-name { font-size: 22px; font-weight: 800; color: var(--navy-900); margin-bottom: 4px; letter-spacing: -0.01em; }
+    .team-role { font-size: 13px; font-weight: 600; color: var(--gray-500); margin-bottom: 14px; line-height: 1.4; min-height: 38px; }
+    .team-accent-line { height: 2px; background: var(--accent-blue); width: 100%; margin-bottom: 18px; }
+    .team-bio { font-size: 13.5px; color: var(--gray-600); line-height: 1.65; flex-grow: 1; }
+
     /* VISI MISI */
     .visimisi { background: var(--gray-50); border-top: 1px solid var(--gray-200); }
     .vm-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 56px; }
@@ -619,6 +653,7 @@
       <a href="#home">Home</a>
       <a href="#produk">Solusi</a>
       <a href="#benefit">Keunggulan</a>
+      <a href="#team">Tim Kami</a>
       <a href="#paket">Harga</a>
       <a href="#visimisi">Visi & Misi</a>
     </div>
@@ -1060,6 +1095,51 @@
               <p class="misi-desc">Mendampingi secara penuh proses migrasi konten manual ke platform digital hingga tim internal terbiasa secara mandiri.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR TEAM -->
+  <section class="team" id="team">
+    <div class="sec-inner">
+      <div class="sec-header centered fade-up">
+        <span class="sec-tag">Pakar & Kepemimpinan</span>
+        <h2 class="sec-title">Tim Kami</h2>
+        <p class="sec-sub">Didukung oleh praktisi berpengalaman di bidang riset teknologi global, manajemen penjualan nasional, dan pelatihan SDM korporasi.</p>
+      </div>
+      <div class="team-grid fade-up">
+        <!-- 1. Unggul Satriadi -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img src="images/team/unggul-satriadi.jpg" alt="Unggul Satriadi">
+          </div>
+          <h3 class="team-name">Unggul Satriadi</h3>
+          <div class="team-role">Sales Trainer, Service Excellence Coach & Self Improvement Practitioner</div>
+          <div class="team-accent-line"></div>
+          <p class="team-bio">Berpengalaman dalam mengasah keterampilan tim penjualan dan standar pelayanan pelanggan, Unggul Satriadi hadir membantu perusahaan mentransformasi potensi SDM. Sebagai Founder 3in1 Success Factor dan penulis beberapa buku Self Improvement, Sales, serta Service Excellence, di myAxara, Unggul memastikan setiap anggota tim siap tumbuh, melayani lebih baik, dan mencetak hasil penjualan yang terukur lewat materi pelatihan yang komunikatif.</p>
+        </div>
+
+        <!-- 2. Muchammad Arifin -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img src="images/team/muchammad-arifin.jpg" alt="Muchammad Arifin">
+          </div>
+          <h3 class="team-name">Muchammad Arifin</h3>
+          <div class="team-role">GM Sales & Marketing & Strategic Advisor</div>
+          <div class="team-accent-line"></div>
+          <p class="team-bio">Memiliki rekam jejak panjang sebagai GM Sales & Marketing dan eksekutif senior di PT Suzuki Finance Indonesia, Muchammad Arifin berpengalaman memimpin jaringan pemasaran nasional skala besar. Di myAxara, Arifin membawa perspektif strategis dari industri pembiayaan dan otomotif untuk memastikan setiap modul pelatihan dan sistem LMS benar-benar selaras dengan kebutuhan pertumbuhan bisnis riil di lapangan.</p>
+        </div>
+
+        <!-- 3. Hendra Fitriadi -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img src="images/team/hendra-fitriadi.jpg" alt="Hendra Fitriadi">
+          </div>
+          <h3 class="team-name">Hendra Fitriadi</h3>
+          <div class="team-role">Head of Product Design</div>
+          <div class="team-accent-line"></div>
+          <p class="team-bio">Berbekal pengalaman bertahun-tahun sebagai UI/UX Designer di Manja Labs Technologies perusahaan riset & pengembangan software berbasis Singapura, Hendra Fitriadi membawa standar desain produk berskala internasional. Di myAxara, Hendra memimpin perancangan antarmuka platform LMS dan sistem SOP berbasis AI agar memiliki performa super cepat, intuitif, dan nyaman digunakan oleh seluruh lapisan karyawan tingkat global.</p>
         </div>
       </div>
     </div>
