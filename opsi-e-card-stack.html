@@ -366,16 +366,20 @@
       background: var(--white);
       display: flex;
       flex-direction: column;
+      align-items: center;
+      text-align: center;
       transition: all 0.3s;
     }
     .team-photo-wrap {
-      width: 100%;
-      aspect-ratio: 4 / 4.5;
-      border-radius: 8px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
       overflow: hidden;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       background: var(--gray-100);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border: 3px solid #fff;
+      outline: 1px solid var(--gray-200);
     }
     .team-photo-wrap img {
       width: 100%;
@@ -388,14 +392,14 @@
       transform: scaleX(-1);
     }
     .team-card:hover .team-photo-wrap img {
-      transform: scale(1.04);
+      transform: scale(1.08);
     }
     .team-card:hover .team-photo-wrap img.flip-x {
-      transform: scaleX(-1) scale(1.04);
+      transform: scaleX(-1) scale(1.08);
     }
-    .team-name { font-size: 22px; font-weight: 800; color: var(--navy-900); margin-bottom: 4px; letter-spacing: -0.01em; }
+    .team-name { font-size: 20px; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; letter-spacing: -0.01em; }
     .team-role { font-size: 13px; font-weight: 600; color: var(--gray-500); margin-bottom: 14px; line-height: 1.4; min-height: 38px; }
-    .team-accent-line { height: 2px; background: var(--accent-blue); width: 100%; margin-bottom: 18px; }
+    .team-accent-line { height: 2px; background: var(--accent-blue); width: 40px; margin: 0 auto 18px; }
     .team-bio { font-size: 13.5px; color: var(--gray-600); line-height: 1.65; flex-grow: 1; }
 
     /* VISI MISI */
@@ -1027,7 +1031,9 @@
       <!-- EFFICIENCY BANNER -->
       <div class="comp-banner fade-up">
         <div class="comp-banner-txt">
-          🚀 <strong>Dampak Nyata:</strong> Perusahaan menghemat hingga <span>85% waktu pembuatan SOP</span> dan <span>70% biaya pelatihan operasional</span> sejak bulan pertama.
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1570ef" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -3px; margin-right: 8px; display: inline-block;">
+            <path d="M2 22s1.5-2 3.5-2.5L7 17l-3-3-2.5 3.5zM14 2s-1.5 2-3.5 2.5L8 7l3 3 2.5-3.5zM17 3s4.5.5 5 1 .5 5 1 5L12 20H4l-2-2v-8L17 3z"/>
+          </svg><strong>Dampak Nyata:</strong> Perusahaan menghemat hingga <span>85% waktu pembuatan SOP</span> dan <span>70% biaya pelatihan operasional</span> sejak bulan pertama.
         </div>
       </div>
       </div>
