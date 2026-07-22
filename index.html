@@ -233,7 +233,7 @@
     .tag { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: var(--r-sm); background: var(--gray-100); color: var(--gray-600); border: 1px solid var(--gray-200); text-transform: uppercase; letter-spacing: 0.02em; }
 
     /* BENEFIT - GRID MINIMALIS */
-    .benefit { background: var(--white); border-top: 1px solid var(--gray-100); }
+    .benefit { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
     .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 48px; margin-top: 56px; }
     .benefit-card {
       background: transparent;
@@ -399,7 +399,7 @@
     .team-bio { font-size: 13.5px; color: var(--gray-600); line-height: 1.65; flex-grow: 1; }
 
     /* VISI MISI */
-    .visimisi { background: var(--gray-50); border-top: 1px solid var(--gray-200); }
+    .visimisi { background: var(--white); border-top: none; }
     .vm-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 56px; }
     .vm-visi { background: var(--navy-900); border-radius: var(--r-lg); padding: 48px; position: relative; overflow: hidden; box-shadow: var(--shadow-lg); }
     .vm-visi::before { content: '"'; position: absolute; right: 28px; top: 12px; font-size: 140px; font-weight: 900; color: rgba(255,255,255,0.04); line-height: 1; font-family: Georgia, serif; }
@@ -1121,62 +1121,7 @@
     </div>
   </section>
 
-  <!-- KEY DIFFERENTIATORS -->
-  <section class="keunggulan">
-    <div class="sec-inner">
-      <div class="ku-wrap">
-        <div class="fade-up">
-          <span class="sec-tag">Keunggulan Axara</span>
-          <h2 class="sec-title">Apa yang Membuat Kami Berbeda</h2>
-          <div class="ku-list">
-            <div class="ku-item">
-              <div class="ku-num">I</div>
-              <div class="ku-content">
-                <h4>Platform & Konten Terintegrasi</h4>
-                <p class="ku-desc">Kami tidak hanya menyediakan sistem LMS yang kosong. Kami juga memproduksi konten Video SOP berbasis AI secara end-to-end untuk Anda.</p>
-              </div>
-            </div>
-            <div class="ku-item">
-              <div class="ku-num">II</div>
-              <div class="ku-content">
-                <h4>AI Avatar Bahasa Indonesia Natural</h4>
-                <p class="ku-desc">Video SOP dipresentasikan oleh avatar kecerdasan buatan dengan pelafalan Bahasa Indonesia yang formal dan mudah dipahami staf lokal.</p>
-              </div>
-            </div>
-            <div class="ku-item">
-              <div class="ku-num">III</div>
-              <div class="ku-content">
-                <h4>Sistem Zero-IT Overhead</h4>
-                <p class="ku-desc">Pengelolaan penuh platform dapat dilakukan langsung oleh departemen HRD tanpa membutuhkan tim developer maupun setup server.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="ku-visual fade-up" style="transition-delay: 0.1s;">
-          <div class="kv-head">
-            <div class="kv-dot" style="background: #ef4444;"></div>
-            <div class="kv-dot" style="background: #f59e0b;"></div>
-            <div class="kv-dot" style="background: #22c55e;"></div>
-            <div class="kv-title">Platform Statistics</div>
-          </div>
-          <div class="kv-stats">
-            <div class="kv-stat"><div class="kv-sv">84<span>%</span></div><div class="kv-sl">Avg Completion</div></div>
-            <div class="kv-stat"><div class="kv-sv">72<span>%</span></div><div class="kv-sl">Cost Redux</div></div>
-          </div>
-          <div class="kv-bars">
-            <div><div class="kv-bl"><span>Sales Standard</span><span>89%</span></div><div class="kv-b"><div class="kv-bf" style="width: 89%; background: var(--accent-blue);"></div></div></div>
-            <div><div class="kv-bl"><span>Finance Compliance</span><span>94%</span></div><div class="kv-b"><div class="kv-bf" style="width: 94%; background: var(--emerald-600);"></div></div></div>
-            <div><div class="kv-bl"><span>Security SOP</span><span>76%</span></div><div class="kv-b"><div class="kv-bf" style="width: 76%; background: var(--purple-600);"></div></div></div>
-          </div>
-          <div class="kv-live">
-            <div class="kv-live-txt">Aggregated Client Performance</div>
-            <div class="kv-live-dot"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- VISI MISI -->
   <section class="visimisi" id="visimisi">
