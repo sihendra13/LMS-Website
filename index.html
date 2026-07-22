@@ -1514,11 +1514,11 @@
         const scale = document.getElementById('employeeScale').value;
         
         // 1. WhatsApp Message Formulation
-        const text = `Halo Axara, saya ingin menjadwalkan demo eksklusif.\n\nBerikut data perusahaan saya:\n• Nama Lengkap: ${name}\n• Nama Perusahaan: ${company}\n• Email Kantor: ${email}\n• Nomor WhatsApp: ${phone}\n• Jumlah Karyawan: ${scale}`;
+        const text = `Halo myAxara, saya ingin menjadwalkan demo eksklusif.\n\nBerikut data perusahaan saya:\n• Nama Lengkap: ${name}\n• Nama Perusahaan: ${company}\n• Email Kantor: ${email}\n• Nomor WhatsApp: ${phone}\n• Jumlah Karyawan: ${scale}`;
         const waUrl = `https://wa.me/6281128013353?text=${encodeURIComponent(text)}`;
         
         // 2. Email Notification (FormSubmit backend)
-        fetch('https://formsubmit.co/ajax/hello@axara.id', {
+        fetch('https://formsubmit.co/ajax/halo@myaxara.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({
