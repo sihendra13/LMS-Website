@@ -281,7 +281,12 @@
       border-radius: var(--r-lg); padding: 36px 28px;
       transition: all 0.3s; backdrop-filter: blur(8px);
     }
-    .axa-card:hover { border-color: rgba(122,90,248,0.3); background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+    .axa-card:hover {
+      border-color: #7a5af8;
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 0 24px rgba(122, 90, 248, 0.35), inset 0 0 12px rgba(122, 90, 248, 0.15);
+    }
     .axa-icon {
       width: 48px; height: 48px; border-radius: 12px;
       background: rgba(122,90,248,0.15); display: flex; align-items: center; justify-content: center;
@@ -489,31 +494,73 @@
     .comp-item strong { color: var(--navy-900); display: block; margin-bottom: 2px; font-size: 15px; }
 
     /* PAKET / PRICING */
-    .paket { background: var(--white); }
-    .paket-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
-    .paket-card { border: 1px solid var(--gray-200); border-radius: var(--r-md); padding: 48px 32px; transition: all 0.3s; display: flex; flex-direction: column; background: var(--white); }
-    .paket-card.featured { border-color: var(--navy-900); border-width: 2px; position: relative; }
-    .paket-card.featured::after { content: 'REKOMENDASI'; position: absolute; top: -12px; left: 32px; background: var(--navy-900); color: #fff; font-size: 9px; font-weight: 700; padding: 4px 12px; border-radius: var(--r-sm); letter-spacing: 0.05em; }
-    .paket-card:not(.featured):hover { border-color: var(--accent-blue); box-shadow: 0 12px 32px rgba(21,112,239,0.15); }
+    .paket { background: var(--navy-900); position: relative; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.06); }
+    .paket::before { content: ''; position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(21,112,239,0.1), transparent 70%); border-radius: 50%; }
+    .paket::after { content: ''; position: absolute; bottom: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(122,90,248,0.1), transparent 70%); border-radius: 50%; }
+    .paket .sec-title { color: #fff; }
+    .paket .sec-sub { color: rgba(255,255,255,0.5); }
+    .paket-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; position: relative; z-index: 1; }
+    .paket-card {
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--r-lg);
+      padding: 48px 32px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(8px);
+    }
+    .paket-card.featured {
+      border-color: #7a5af8;
+      border-width: 2px;
+      position: relative;
+      background: rgba(255,255,255,0.07);
+      box-shadow: 0 0 20px rgba(122, 90, 248, 0.15);
+    }
+    .paket-card.featured::after {
+      content: 'REKOMENDASI';
+      position: absolute;
+      top: -12px;
+      left: 32px;
+      background: #7a5af8;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--r-sm);
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 12px rgba(122, 90, 248, 0.4);
+    }
+    .paket-card:not(.featured):hover {
+      border-color: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.07);
+      transform: translateY(-4px);
+    }
+    .paket-card.featured:hover {
+      border-color: #9b7bfd;
+      background: rgba(255,255,255,0.09);
+      transform: translateY(-4px);
+      box-shadow: 0 0 32px rgba(122, 90, 248, 0.4), inset 0 0 12px rgba(122, 90, 248, 0.2);
+    }
     .pk-badge { font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: var(--r-sm); display: inline-block; margin-bottom: 24px; align-self: flex-start; text-transform: uppercase; letter-spacing: 0.05em; }
-    .pk-badge.starter { background: var(--gray-100); color: var(--gray-600); }
-    .pk-badge.popular { background: var(--accent-blue-light); color: var(--accent-blue); }
-    .pk-badge.enterprise { background: var(--amber-50); color: var(--amber-600); }
-    .pk-name { font-size: 18px; font-weight: 700; color: var(--navy-900); margin-bottom: 12px; }
-    .pk-price { font-size: 32px; font-weight: 800; color: var(--navy-900); letter-spacing: -0.02em; margin-bottom: 2px; }
-    .pk-original-price { font-size: 16px; text-decoration: line-through; color: var(--gray-400); margin-bottom: 4px; font-weight: 600; }
-    .pk-price-sub { font-size: 11px; color: #7a5af8; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
-    .pk-period { font-size: 13px; color: var(--gray-400); margin-bottom: 32px; border-bottom: 1px solid var(--gray-100); padding-bottom: 20px; font-weight: 500; }
+    .pk-badge.starter { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); }
+    .pk-badge.popular { background: rgba(122,90,248,0.2); color: #c084fc; }
+    .pk-badge.enterprise { background: rgba(245,158,11,0.15); color: #fbbf24; }
+    .pk-name { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .pk-price { font-size: 32px; font-weight: 800; color: #fff; letter-spacing: -0.02em; margin-bottom: 2px; }
+    .pk-original-price { font-size: 16px; text-decoration: line-through; color: rgba(255,255,255,0.4); margin-bottom: 4px; font-weight: 600; }
+    .pk-price-sub { font-size: 11px; color: #a78bfa; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .pk-period { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 20px; font-weight: 500; }
     .pk-feats { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; flex-grow: 1; }
-    .pk-feat { display: flex; gap: 10px; font-size: 14px; align-items: flex-start; color: var(--gray-600); }
+    .pk-feat { display: flex; gap: 10px; font-size: 14px; align-items: flex-start; color: rgba(255,255,255,0.7); }
     .pk-feat-ic { width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
-    .pk-feat-ic.yes { color: var(--emerald-600); }
-    .pk-feat-ic.no { color: var(--gray-300); }
-    .pk-btn { display: block; text-align: center; padding: 14px; border-radius: var(--r-sm); font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.2s; border: 1px solid var(--navy-900); }
-    .pk-btn.outline { color: var(--navy-900); background: transparent; }
-    .pk-btn.outline:hover { background: var(--gray-50); }
-    .pk-btn.solid { background: var(--navy-900); color: #fff; }
-    .pk-btn.solid:hover { background: var(--accent-blue); border-color: var(--accent-blue); }
+    .pk-feat-ic.yes { color: #34d399; }
+    .pk-feat-ic.no { color: rgba(255,255,255,0.25); }
+    .pk-btn { display: block; text-align: center; padding: 14px; border-radius: var(--r-sm); font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+    .pk-btn.outline { color: #fff; background: transparent; border: 1px solid rgba(255,255,255,0.2); }
+    .pk-btn.outline:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.4); }
+    .pk-btn.solid { background: #fff; color: var(--navy-900); border: 1px solid #fff; }
+    .pk-btn.solid:hover { background: var(--accent-blue-200); border-color: var(--accent-blue-200); color: var(--navy-900); }
 
     /* CTA SECTION */
     .cta-sec { padding: 120px 6%; background: var(--navy-900); text-align: center; position: relative; overflow: hidden; }
