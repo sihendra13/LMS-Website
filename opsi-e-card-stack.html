@@ -502,8 +502,10 @@
     .pk-badge.popular { background: var(--accent-blue-light); color: var(--accent-blue); }
     .pk-badge.enterprise { background: var(--amber-50); color: var(--amber-600); }
     .pk-name { font-size: 18px; font-weight: 700; color: var(--navy-900); margin-bottom: 12px; }
-    .pk-price { font-size: 32px; font-weight: 800; color: var(--navy-900); letter-spacing: -0.02em; margin-bottom: 6px; filter: blur(5px); user-select: none; }
-    .pk-period { font-size: 13px; color: var(--gray-400); margin-bottom: 32px; border-bottom: 1px solid var(--gray-100); padding-bottom: 32px; font-weight: 500; }
+    .pk-price { font-size: 32px; font-weight: 800; color: var(--navy-900); letter-spacing: -0.02em; margin-bottom: 2px; }
+    .pk-original-price { font-size: 16px; text-decoration: line-through; color: var(--gray-400); margin-bottom: 4px; font-weight: 600; }
+    .pk-price-sub { font-size: 11px; color: #7a5af8; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .pk-period { font-size: 13px; color: var(--gray-400); margin-bottom: 32px; border-bottom: 1px solid var(--gray-100); padding-bottom: 20px; font-weight: 500; }
     .pk-feats { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; flex-grow: 1; }
     .pk-feat { display: flex; gap: 10px; font-size: 14px; align-items: flex-start; color: var(--gray-600); }
     .pk-feat-ic { width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
@@ -568,14 +570,14 @@
       .hero-feature-tags { flex-wrap: wrap; white-space: normal; justify-content: center; gap: 8px; margin-top: 24px; width: 100%; }
       .hero-chip-item { white-space: normal; text-align: center; font-size: 11px; padding: 6px 12px; }
       .hero-visual { display: none; }
-      .mobile-card-stack { display: flex; align-items: center; justify-content: center; margin: 20px auto 28px; position: relative; height: 270px; width: 100%; }
-      .mobile-card-stack .card-stack-wrap { width: 260px; height: 260px; margin: 0 auto; position: relative; display: flex; align-items: center; justify-content: center; }
-      .mobile-card-stack .sop-card { width: 250px; padding: 10px; top: 0; left: 5px; margin: 0; }
-      .mobile-card-stack .sop-card-video { height: 135px; border-radius: 10px; }
+      .mobile-card-stack { display: flex; align-items: center; justify-content: center; margin: 20px auto 28px; position: relative; height: 310px; width: 100%; }
+      .mobile-card-stack .card-stack-wrap { width: 320px; height: 300px; margin: 0 auto; position: relative; display: flex; align-items: center; justify-content: center; }
+      .mobile-card-stack .sop-card { width: 310px; padding: 12px; top: 0; left: 5px; margin: 0; }
+      .mobile-card-stack .sop-card-video { height: 165px; border-radius: 10px; }
       .mobile-card-stack .sop-card-meta { gap: 6px; }
-      .mobile-card-stack .sop-dept { font-size: 9px; padding: 2px 6px; }
-      .mobile-card-stack .sop-time { font-size: 9px; }
-      .mobile-card-stack .sop-card-title { font-size: 12px; }
+      .mobile-card-stack .sop-dept { font-size: 10px; padding: 2px 6px; }
+      .mobile-card-stack .sop-time { font-size: 10px; }
+      .mobile-card-stack .sop-card-title { font-size: 13px; }
       .mobile-card-stack .hv-bg-dots { display: none; }
       .produk-grid { grid-template-columns: 1fr; gap: 24px; }
       .benefit-grid { grid-template-columns: 1fr; gap: 32px; margin-top: 40px; }
@@ -1196,7 +1198,9 @@
         <div class="paket-card">
           <div class="pk-badge starter">STARTER</div>
           <h3 class="pk-name">Starter</h3>
-          <div class="pk-price">Rp 3.000.000</div>
+          <div class="pk-original-price">Rp 3.000.000</div>
+          <div class="pk-price">Rp 2.000.000</div>
+          <div class="pk-price-sub">Promo selama 2026</div>
           <div class="pk-period">per bulan</div>
           <div class="pk-feats">
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Single Department</div>
@@ -1206,30 +1210,32 @@
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Maks 200 Karyawan</div>
             <div class="pk-feat"><span class="pk-feat-ic no">✗</span> Sertifikasi Kelulusan</div>
           </div>
-          <a href="https://wa.me/6281128013353?text=Halo%20myAxara%2C%20saya%20tertarik%20untuk%20berlangganan%20paket%20Starter%20(Rp%203jt%2Fbulan).%20Bagaimana%20langkah%20selanjutnya%3F" target="_blank" rel="noopener noreferrer" class="pk-btn outline">Pilih Paket</a>
+          <a href="https://wa.me/6281128013353?text=Halo%20myAxara%2C%20saya%20tertarik%20untuk%20berlangganan%20paket%20Starter%20(Promo%20Rp%202jt%2Fbulan).%20Bagaimana%20langkah%20selanjutnya%3F" target="_blank" rel="noopener noreferrer" class="pk-btn outline">Pilih Paket</a>
         </div>
         
         <div class="paket-card featured">
           <div class="pk-badge popular">BUSINESS</div>
           <h3 class="pk-name">Business</h3>
-          <div class="pk-price">Rp 6.500.000</div>
-          <div class="pk-period">per bulan</div>
+          <div class="pk-original-price" style="color: rgba(255,255,255,0.5);">Rp 6.500.000</div>
+          <div class="pk-price" style="color: #ffffff;">Rp 4.000.000</div>
+          <div class="pk-price-sub" style="color: #a78bfa;">Promo selama 2026</div>
+          <div class="pk-period" style="color: rgba(255,255,255,0.7); border-bottom-color: rgba(255,255,255,0.1);">per bulan</div>
           <div class="pk-feats">
-            <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Multi Department</div>
-            <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Unlimited SOP (PPT)</div>
-            <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Hosting 12-15 Video (Maks 5 Mnt/Video)</div>
-            <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Sertifikat (Nama, Tanpa Logo)</div>
-            <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Maks 500 Karyawan</div>
-            <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> 3 User Admin (Lebih = Overage)</div>
+            <div class="pk-feat" style="color: rgba(255,255,255,0.85);"><span class="pk-feat-ic yes" style="color: #34d399;">✓</span> Multi Department</div>
+            <div class="pk-feat" style="color: rgba(255,255,255,0.85);"><span class="pk-feat-ic yes" style="color: #34d399;">✓</span> Unlimited SOP (PPT)</div>
+            <div class="pk-feat" style="color: rgba(255,255,255,0.85);"><span class="pk-feat-ic yes" style="color: #34d399;">✓</span> Hosting 12-15 Video (Maks 5 Mnt/Video)</div>
+            <div class="pk-feat" style="color: rgba(255,255,255,0.85);"><span class="pk-feat-ic yes" style="color: #34d399;">✓</span> Sertifikat (Nama, Tanpa Logo)</div>
+            <div class="pk-feat" style="color: rgba(255,255,255,0.85);"><span class="pk-feat-ic yes" style="color: #34d399;">✓</span> Maks 500 Karyawan</div>
+            <div class="pk-feat" style="color: rgba(255,255,255,0.85);"><span class="pk-feat-ic yes" style="color: #34d399;">✓</span> 3 User Admin (Lebih = Overage)</div>
           </div>
-          <a href="https://wa.me/6281128013353?text=Halo%20myAxara%2C%20saya%20ingin%20mendiskusikan%20implementasi%20paket%20Business%20(Rp%206%2C5jt%2Fbulan)%20untuk%20perusahaan%20kami." target="_blank" rel="noopener noreferrer" class="pk-btn solid">Hubungi Kami</a>
+          <a href="https://wa.me/6281128013353?text=Halo%20myAxara%2C%20saya%20ingin%20mendiskusikan%20implementasi%20paket%20Business%20(Promo%20Rp%204jt%2Fbulan)%20untuk%20perusahaan%20kami." target="_blank" rel="noopener noreferrer" class="pk-btn solid" style="background: #ffffff; color: var(--navy-900); border-color: #ffffff;">Hubungi Kami</a>
         </div>
         
         <div class="paket-card">
           <div class="pk-badge enterprise">ENTERPRISE</div>
           <h3 class="pk-name">Enterprise</h3>
-          <div class="pk-price">Rp 15.000.000</div>
-          <div class="pk-period">per bulan</div>
+          <div class="pk-price" style="font-size: 26px; padding: 22px 0 10px; color: var(--navy-900);">Custom Pricing</div>
+          <div class="pk-period" style="padding-bottom: 24px;">Hubungi untuk Penawaran</div>
           <div class="pk-feats">
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Multi Department</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Hosting 18-20 Video (Maks 15 Mnt/Video)</div>
@@ -1239,7 +1245,7 @@
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Dedicated Server & SSO SAML 2.0</div>
             <div class="pk-feat"><span class="pk-feat-ic yes">✓</span> Jaminan SLA 99.9% & Prioritas 24/7</div>
           </div>
-          <a href="https://wa.me/6281128013353?text=Halo%20myAxara%2C%20kami%20tertarik%20dengan%20paket%20Enterprise%20(Mulai%20Rp%2015jt%2Fbulan)%20dan%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20kustom%20skala%20besar." target="_blank" rel="noopener noreferrer" class="pk-btn outline">Ajukan Penawaran</a>
+          <a href="https://wa.me/6281128013353?text=Halo%20myAxara%2C%20kami%20tertarik%20dengan%20paket%20Enterprise%20dan%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20kustom%20skala%20besar." target="_blank" rel="noopener noreferrer" class="pk-btn outline">Ajukan Penawaran</a>
         </div>
       </div>
     </div>
