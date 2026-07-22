@@ -233,38 +233,34 @@
     .tag { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: var(--r-sm); background: var(--gray-100); color: var(--gray-600); border: 1px solid var(--gray-200); text-transform: uppercase; letter-spacing: 0.02em; }
 
     /* BENEFIT - GRID MINIMALIS */
-    .benefit { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); position: relative; }
-    .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
+    .benefit { background: var(--white); border-top: 1px solid var(--gray-100); }
+    .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 48px; margin-top: 56px; }
     .benefit-card {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--r-md);
-      padding: 32px;
+      background: transparent;
+      border: none;
+      padding: 0;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
     }
     .benefit-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--accent-blue-200);
-      box-shadow: 0 20px 32px -8px rgba(21,112,239,0.08), 0 4px 12px -2px rgba(21,112,239,0.03);
+      transform: translateY(-2px);
     }
     .benefit-ic {
       width: 46px; height: 46px;
       border-radius: var(--r-sm);
       background: linear-gradient(135deg, var(--accent-blue-light), rgba(21, 112, 239, 0.15));
       display: flex; align-items: center; justify-content: center;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       color: var(--accent-blue);
       transition: transform 0.3s ease;
     }
     .benefit-card:hover .benefit-ic {
-      transform: scale(1.1) rotate(5deg);
+      transform: scale(1.08) rotate(3deg);
     }
-    .benefit-title { font-size: 16px; font-weight: 700; color: var(--navy-900); margin-bottom: 10px; }
-    .benefit-desc { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
+    .benefit-title { font-size: 17px; font-weight: 700; color: var(--navy-900); margin-bottom: 10px; }
+    .benefit-desc { font-size: 14px; color: var(--gray-500); line-height: 1.65; }
 
     /* AXA AI ASSISTANT */
     .axa-ai { background: var(--navy-900); position: relative; overflow: hidden; }
@@ -278,20 +274,21 @@
       padding: 5px 14px; border-radius: 99px; margin-bottom: 20px;
       letter-spacing: 0.06em;
     }
-    .axa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; z-index: 1; }
+    .axa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; position: relative; z-index: 1; }
     .axa-card {
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
       border-radius: var(--r-lg); padding: 36px 28px;
       transition: all 0.3s; backdrop-filter: blur(8px);
     }
-    .axa-card:hover { border-color: rgba(122,90,248,0.4); background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+    .axa-card:hover { border-color: rgba(122,90,248,0.3); background: rgba(255,255,255,0.08); transform: translateY(-2px); }
     .axa-icon {
       width: 48px; height: 48px; border-radius: 12px;
       background: rgba(122,90,248,0.15); display: flex; align-items: center; justify-content: center;
       margin-bottom: 20px;
     }
     .axa-title { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 10px; }
-    .axa-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+    .axa-desc { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
 
     @media (max-width: 960px) {
       .axa-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -849,20 +846,6 @@
     </div>
   </section>
 
-  <!-- LOGOS 
-  <div class="logos">
-    <div class="logos-inner">
-      <div class="logos-label">Dipercaya oleh institusi terkemuka di Indonesia</div>
-      <div class="logos-row">
-        <div class="logo-item"><div class="logo-item-box">MB</div>PT Maju Bersama</div>
-        <div class="logo-item"><div class="logo-item-box">GM</div>PT Global Mitra</div>
-        <div class="logo-item"><div class="logo-item-box">SI</div>PT Sinar Indah</div>
-        <div class="logo-item"><div class="logo-item-box">KJ</div>CV Karya Jaya</div>
-        <div class="logo-item"><div class="logo-item-box">NU</div>PT Nusantara Utama</div>
-      </div>
-    </div>
-  </div>
-  -->
 
   <!-- AXA AI ASSISTANT -->
   <section class="axa-ai" id="axa-ai">
