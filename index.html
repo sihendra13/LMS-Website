@@ -11,12 +11,15 @@
   </script>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <!-- Preconnect untuk Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <title>myAxara | Platform LMS & SOP Terbaik untuk Perusahaan Indonesia</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="canonical" href="https://www.myaxara.com/" />
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="myAxara adalah platform LMS dan SOP digital terbaik untuk perusahaan Indonesia. Training karyawan lebih efektif dengan video SOP, kuis, sertifikat, dan push notifikasi. Coba gratis sekarang." />
+  <meta name="description" content="myAxara adalah platform LMS dan Video SOP berbasis AI untuk perusahaan Indonesia. Mulai dari Rp 2 juta/bulan. Jadwalkan demo gratis sekarang." />
   <meta name="keywords" content="LMS Indonesia, learning management system, SOP digital, training karyawan, platform edukasi perusahaan, e-learning korporasi, sertifikat digital, myAxara" />
   <meta name="author" content="myAxara" />
   <meta name="robots" content="index, follow" />
@@ -45,13 +48,35 @@
     "@type": "Organization",
     "name": "myAxara",
     "url": "https://www.myaxara.com",
-    "logo": "https://www.myaxara.com/favicon.svg",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.myaxara.com/images/share-preview.png",
+      "width": 1200,
+      "height": 630
+    },
     "description": "Platform LMS dan SOP digital terbaik untuk perusahaan Indonesia.",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer support",
+      "telephone": "+62-811-2801-3353",
       "availableLanguage": "Indonesian"
+    },
+    "sameAs": [],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ID"
     }
+  }
+  </script>
+
+  <!-- Structured Data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "myAxara",
+    "url": "https://www.myaxara.com",
+    "inLanguage": "id"
   }
   </script>
 
@@ -65,10 +90,37 @@
     "operatingSystem": "Web, Android, iOS",
     "description": "Platform Learning Management System (LMS) dan SOP digital untuk training karyawan perusahaan Indonesia. Dilengkapi video SOP, kuis, sertifikat, dan push notifikasi.",
     "offers": {
-      "@type": "Offer",
+      "@type": "AggregateOffer",
       "priceCurrency": "IDR",
-      "price": "0",
-      "description": "Paket Starter gratis tersedia"
+      "lowPrice": "2000000",
+      "highPrice": "4000000",
+      "offerCount": "3",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Starter",
+          "price": "2000000",
+          "priceCurrency": "IDR",
+          "description": "Paket Starter untuk bisnis kecil dan menengah"
+        },
+        {
+          "@type": "Offer",
+          "name": "Business",
+          "price": "4000000",
+          "priceCurrency": "IDR",
+          "description": "Paket Business untuk perusahaan berkembang"
+        },
+        {
+          "@type": "Offer",
+          "name": "Enterprise",
+          "description": "Paket Enterprise dengan harga custom untuk korporasi besar"
+        }
+      ]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "myAxara",
+      "url": "https://www.myaxara.com"
     },
     "url": "https://www.myaxara.com",
     "screenshot": "https://www.myaxara.com/images/share-preview.png",
@@ -877,15 +929,15 @@
     <div class="hero-inner">
       <div class="fade-up">
         <div class="hero-tag"><div class="badge-dot"></div>Infrastruktur Pembelajaran Korporat</div>
-        <h1>Transformasi Digital<br>Strategis untuk SDM<br><em>Indonesia.</em></h1>
+        <h1>Platform LMS &amp; Video SOP<br>untuk Perusahaan<br><em>Indonesia.</em></h1>
         <!-- MOBILE CARD STACK (hidden on desktop) -->
         <div class="mobile-card-stack" id="mobileCardStack">
           <div class="card-stack-wrap" id="mobileCardStackWrap">
-            <div class="sop-card" data-index="0"><div class="sop-card-video"><video src="videos/closing-deal.mp4" autoplay muted loop playsinline></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#3b82f6;background:rgba(59,130,246,0.08);">Sales</span><span class="sop-time">▷ Video ⏱ 6 Min</span></div><div class="sop-card-title">SOP Teknik Closing Deal & Negosiasi</div></div>
-            <div class="sop-card" data-index="1"><div class="sop-card-video"><video src="videos/cashier-service.mp4" autoplay muted loop playsinline></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#10b981;background:rgba(16,185,129,0.08);">Operations</span><span class="sop-time">▷ Video ⏱ 12 Min</span></div><div class="sop-card-title">SOP Standar Pelayanan Kasir</div></div>
-            <div class="sop-card" data-index="2"><div class="sop-card-video"><video src="videos/finance-audit.mp4" autoplay muted loop playsinline></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#7a5af8;background:rgba(122,90,248,0.08);">Finance</span><span class="sop-time">▷ Video ⏱ 10 Min</span></div><div class="sop-card-title">SOP Audit & Pembukuan Keuangan</div></div>
-            <div class="sop-card" data-index="3"><div class="sop-card-video"><video src="videos/workplace-safety.mp4" autoplay muted loop playsinline></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#ef4444;background:rgba(239,68,68,0.08);">K3 & Safety</span><span class="sop-time">▷ Video ⏱ 10 Min</span></div><div class="sop-card-title">SOP Protokol Kesehatan & Keselamatan Kerja</div></div>
-            <div class="sop-card" data-index="4"><div class="sop-card-video"><video src="videos/warehouse.mp4" autoplay muted loop playsinline></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#f59e0b;background:rgba(245,158,11,0.08);">Logistics</span><span class="sop-time">▷ Video ⏱ 12 Min</span></div><div class="sop-card-title">SOP Manajemen Gudang & Inventori</div></div>
+            <div class="sop-card" data-index="0"><div class="sop-card-video"><video src="videos/closing-deal.mp4" autoplay muted loop playsinline preload="none" poster="images/share-preview.png"></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#3b82f6;background:rgba(59,130,246,0.08);">Sales</span><span class="sop-time">▷ Video ⏱ 6 Min</span></div><div class="sop-card-title">SOP Teknik Closing Deal & Negosiasi</div></div>
+            <div class="sop-card" data-index="1"><div class="sop-card-video"><video src="videos/cashier-service.mp4" autoplay muted loop playsinline preload="none" poster="images/share-preview.png"></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#10b981;background:rgba(16,185,129,0.08);">Operations</span><span class="sop-time">▷ Video ⏱ 12 Min</span></div><div class="sop-card-title">SOP Standar Pelayanan Kasir</div></div>
+            <div class="sop-card" data-index="2"><div class="sop-card-video"><video src="videos/finance-audit.mp4" autoplay muted loop playsinline preload="none" poster="images/share-preview.png"></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#7a5af8;background:rgba(122,90,248,0.08);">Finance</span><span class="sop-time">▷ Video ⏱ 10 Min</span></div><div class="sop-card-title">SOP Audit & Pembukuan Keuangan</div></div>
+            <div class="sop-card" data-index="3"><div class="sop-card-video"><video src="videos/workplace-safety.mp4" autoplay muted loop playsinline preload="none" poster="images/share-preview.png"></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#ef4444;background:rgba(239,68,68,0.08);">K3 & Safety</span><span class="sop-time">▷ Video ⏱ 10 Min</span></div><div class="sop-card-title">SOP Protokol Kesehatan & Keselamatan Kerja</div></div>
+            <div class="sop-card" data-index="4"><div class="sop-card-video"><video src="videos/warehouse.mp4" autoplay muted loop playsinline preload="none" poster="images/share-preview.png"></video></div><div class="sop-card-meta"><span class="sop-dept" style="color:#f59e0b;background:rgba(245,158,11,0.08);">Logistics</span><span class="sop-time">▷ Video ⏱ 12 Min</span></div><div class="sop-card-title">SOP Manajemen Gudang & Inventori</div></div>
           </div>
         </div>
         <p class="hero-p">Platform LMS premium terintegrasi dengan produksi Video SOP berbasis AI untuk efisiensi operasional dan standarisasi kualitas di seluruh lini bisnis Anda.</p>
@@ -911,7 +963,7 @@
           <!-- Card 0 -->
           <div class="sop-card" data-index="0">
             <div class="sop-card-video">
-              <video src="videos/closing-deal.mp4" autoplay muted loop playsinline></video>
+              <video src="videos/closing-deal.mp4" autoplay muted loop playsinline preload="none" poster="images/share-preview.png"></video>
             </div>
             <div class="sop-card-meta">
               <span class="sop-dept" style="color:#3b82f6;background:rgba(59,130,246,0.08);">Sales</span>
@@ -922,7 +974,7 @@
           <!-- Card 1 -->
           <div class="sop-card" data-index="1">
             <div class="sop-card-video">
-              <video src="videos/cashier-service.mp4" autoplay muted loop playsinline></video>
+              <video src="videos/cashier-service.mp4" autoplay muted loop playsinline preload="none" poster="images/share-preview.png"></video>
             </div>
             <div class="sop-card-meta">
               <span class="sop-dept" style="color:#10b981;background:rgba(16,185,129,0.08);">Operations</span>
@@ -933,7 +985,7 @@
           <!-- Card 2 -->
           <div class="sop-card" data-index="2">
             <div class="sop-card-video">
-              <video src="videos/finance-audit.mp4" autoplay muted loop playsinline></video>
+              <video src="videos/finance-audit.mp4" autoplay muted loop playsinline preload="none" poster="images/share-preview.png"></video>
             </div>
             <div class="sop-card-meta">
               <span class="sop-dept" style="color:#7a5af8;background:rgba(122,90,248,0.08);">Finance</span>
@@ -944,7 +996,7 @@
           <!-- Card 3 -->
           <div class="sop-card" data-index="3">
             <div class="sop-card-video">
-              <video src="videos/workplace-safety.mp4" autoplay muted loop playsinline></video>
+              <video src="videos/workplace-safety.mp4" autoplay muted loop playsinline preload="none" poster="images/share-preview.png"></video>
             </div>
             <div class="sop-card-meta">
               <span class="sop-dept" style="color:#ef4444;background:rgba(239,68,68,0.08);">K3 & Safety</span>
@@ -955,7 +1007,7 @@
           <!-- Card 4 -->
           <div class="sop-card" data-index="4">
             <div class="sop-card-video">
-              <video src="videos/warehouse.mp4" autoplay muted loop playsinline></video>
+              <video src="videos/warehouse.mp4" autoplay muted loop playsinline preload="none" poster="images/share-preview.png"></video>
             </div>
             <div class="sop-card-meta">
               <span class="sop-dept" style="color:#f59e0b;background:rgba(245,158,11,0.08);">Logistics</span>
@@ -1316,7 +1368,7 @@
         <!-- 1. Unggul Satriadi -->
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="images/team/unggul-satriadi.jpg" alt="Unggul Satriadi">
+            <img src="images/team/unggul-satriadi.jpg" alt="Unggul Satriadi - Service Excellence Coach myAxara" width="134" height="134" loading="lazy">
           </div>
           <h3 class="team-name">Unggul Satriadi</h3>
           <div class="team-role">Service Excellence Coach & Self Improvement Practitioner</div>
@@ -1327,7 +1379,7 @@
         <!-- 2. Muchammad Arifin -->
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="images/team/muchammad-arifin.jpg" alt="Muchammad Arifin">
+            <img src="images/team/muchammad-arifin.jpg" alt="Muchammad Arifin - Sales & Marketing Director myAxara" width="134" height="134" loading="lazy">
           </div>
           <h3 class="team-name">Muchammad Arifin</h3>
           <div class="team-role">GM Sales & Marketing & Strategic Advisor</div>
@@ -1338,7 +1390,7 @@
         <!-- 3. Hendra Fitriadi -->
         <div class="team-card">
           <div class="team-photo-wrap">
-            <img src="images/team/hendra-fitriadi.jpg" alt="Hendra Fitriadi" class="flip-x">
+            <img src="images/team/hendra-fitriadi.jpg" alt="Hendra Fitriadi - Head of Product Design myAxara" class="flip-x" width="134" height="134" loading="lazy">
           </div>
           <h3 class="team-name">Hendra Fitriadi</h3>
           <div class="team-role">Head of Product Design</div>
@@ -1395,8 +1447,9 @@
       </div>
     </div>
     <div class="ft-bottom">
-      <div>© 2026 PT Axara Trisena Solusi Indonesia. All rights reserved.</div>
-      <div class="ft-bottom-links">
+      <div>© 2026 <strong>PT Axara Trisena Solusi Indonesia</strong>. All rights reserved.</div>
+      <div class="ft-bottom-links" style="font-size:12px;color:var(--gray-400);margin-top:4px;">
+        Terdaftar di Indonesia &middot; Hubungi: <a href="https://wa.me/6281128013353" style="color:inherit;">+62 811-2801-3353</a>
       </div>
     </div>
   </footer>

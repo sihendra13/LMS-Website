@@ -1,0 +1,44 @@
+# myAxara
+
+> Platform LMS (Learning Management System) dan Video SOP berbasis AI untuk perusahaan Indonesia.
+
+myAxara adalah platform edukasi digital B2B yang mengintegrasikan sistem manajemen pembelajaran modern dengan produksi video SOP (Standard Operating Procedure) berbasis kecerdasan buatan. Ditujukan untuk departemen HR, Training, dan operasional di perusahaan-perusahaan Indonesia.
+
+## Produk Utama
+
+- **myAxara LMS**: Platform pembelajaran karyawan dengan modul interaktif, kuis, sertifikat digital, dan push notifikasi. Mendukung konten video, dokumen PDF, dan kuis berbasis AI.
+- **Video SOP AI**: Produksi video SOP otomatis dalam Bahasa Indonesia menggunakan AI Avatar. Draft SOP lengkap dalam 30 detik dari deskripsi singkat — menghemat hingga 85% waktu penulisan manual.
+- **AXA AI Assistant**: Asisten HRD berbasis AI untuk membuat SOP, menyusun laporan, dan menilai tugas karyawan secara otomatis.
+- **1-Click Analytics**: Dashboard analitik yang memangkas waktu kerja admin HRD hingga 12 jam/minggu.
+
+## Harga
+
+- **Starter**: Rp 2.000.000/bulan
+- **Business**: Rp 4.000.000/bulan
+- **Enterprise**: Harga custom (hubungi sales)
+
+## Keunggulan
+
+- Mengurangi biaya pelatihan hingga 70%
+- SOP siap dalam 30 detik dengan AI
+- Hemat 12 jam/minggu untuk admin HRD
+- Uptime 99.9% dengan Jaminan SLA
+- Konten dalam Bahasa Indonesia
+
+## Klien
+
+- PT Suzuki Finance Indonesia
+
+## Perusahaan
+
+- **Nama Legal**: PT Axara Trisena Solusi Indonesia
+- **Negara**: Indonesia
+- **Kontak**: https://wa.me/6281128013353
+- **Website**: https://www.myaxara.com
+
+## Halaman Penting
+
+- [Homepage](https://www.myaxara.com/)
+- [Jaminan SLA](https://www.myaxara.com/jaminan-sla.html)
+- [Kebijakan Privasi](https://www.myaxara.com/kebijakan-privasi.html)
+- [Syarat & Ketentuan](https://www.myaxara.com/syarat-ketentuan.html)
