@@ -104,23 +104,24 @@
 
 
     /* SHARE BUTTONS */
-    .article-share { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
-    .share-label { font-size: 0.85rem; font-weight: 600; color: #98a2b3; margin-right: 0.25rem; }
-    .share-btn { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); color: #fff; transition: background 0.2s; border: none; cursor: pointer; text-decoration: none; flex-shrink: 0; }
-    .share-btn:hover { background: rgba(21,112,239,0.5); }
-    .share-btn svg { width: 18px; height: 18px; fill: currentColor; }
+    .article-share { display: flex; align-items: center; gap: 0.625rem; margin-top: 1.25rem; padding-bottom: 1.5rem; flex-wrap: wrap; }
+    .share-label { font-size: 0.8rem; font-weight: 600; color: #667085; margin-right: 0.25rem; }
+    .share-btn { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #f2f4f7; color: #344054; transition: all 0.2s; border: none; cursor: pointer; text-decoration: none; flex-shrink: 0; }
+    .share-btn:hover { background: #1570ef; color: #fff; }
+    .share-btn svg { width: 17px; height: 17px; fill: currentColor; }
     .copy-toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(80px); background: #0c111d; color: #fff; padding: 0.75rem 1.5rem; border-radius: 30px; font-size: 0.875rem; opacity: 0; transition: all 0.3s; z-index: 9999; pointer-events: none; white-space: nowrap; }
     .copy-toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
     /* RELATED ARTICLES */
-    .related-section { max-width: 760px; margin: 3rem auto 0; padding: 0 1.5rem 4rem; }
-    .related-section h2 { font-size: 1.25rem; font-weight: 700; color: #0c111d; margin-bottom: 1.25rem; }
-    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .related-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid #e4e7ec; border-radius: 12px; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
-    .related-card:hover { box-shadow: 0 6px 20px rgba(12,17,29,0.1); transform: translateY(-2px); }
-    .related-thumb { height: 100px; overflow: hidden; } .related-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .related-content { padding: 0.875rem 1rem 1rem; }
-    .related-content .rtag { display: inline-block; background: #eff8ff; color: #1570ef; font-size: 0.65rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
-    .related-content h3 { font-size: 0.875rem; font-weight: 600; color: #0c111d; line-height: 1.4; }
+    .related-section { max-width: 760px; margin: 3.5rem auto 0; padding: 0 1.5rem 5rem; }
+    .related-section h2 { font-size: 1.3rem; font-weight: 800; color: #0c111d; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .related-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid #e4e7ec; border-radius: 14px; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
+    .related-card:hover { box-shadow: 0 8px 28px rgba(12,17,29,0.1); transform: translateY(-3px); }
+    .related-thumb { height: 160px; overflow: hidden; } .related-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+    .related-card:hover .related-thumb img { transform: scale(1.04); }
+    .related-content { padding: 1rem 1rem 1.125rem; }
+    .related-content .rtag { display: inline-block; background: #eff8ff; color: #1570ef; font-size: 0.65rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    .related-content h3 { font-size: 0.875rem; font-weight: 700; color: #0c111d; line-height: 1.45; }
     @media (max-width: 640px) {
       .article-header h1 { font-size: 1.5rem; }
       .nav-links { gap: 1rem; }
@@ -362,21 +363,21 @@
     <h2>Artikel Terkait</h2>
     <div class="related-grid">
       <a href="/blog/video-sop-adalah.html" class="related-card">
-        <div class="related-thumb"><img src="https://images.unsplash.com/photo-1572666340727-40ec7a1cb2a0?w=300&h=100&fit=crop&auto=format&q=80" alt="Video SOP perusahaan" loading="lazy"></div>
+        <div class="related-thumb"><img src="https://images.unsplash.com/photo-1572666340727-40ec7a1cb2a0?w=400?w=300&h=100&fit=croph=160?w=300&h=100&fit=cropfit=crop&auto=format&q=80" alt="Video SOP perusahaan" loading="lazy"></div>
         <div class="related-content">
           <span class="rtag">SOP Digital</span>
           <h3>Apa itu Video SOP? Cara Modernisasi Prosedur Perusahaan dengan Video</h3>
         </div>
       </a>
       <a href="/blog/cara-membuat-sop-digital.html" class="related-card">
-        <div class="related-thumb"><img src="https://images.unsplash.com/photo-1606327054629-64c8b0fd6e4f?w=300&h=100&fit=crop&auto=format&q=80" alt="SOP Digital perusahaan" loading="lazy"></div>
+        <div class="related-thumb"><img src="https://images.unsplash.com/photo-1606327054629-64c8b0fd6e4f?w=400?w=300&h=100&fit=croph=160?w=300&h=100&fit=cropfit=crop&auto=format&q=80" alt="SOP Digital perusahaan" loading="lazy"></div>
         <div class="related-content">
           <span class="rtag">SOP Digital</span>
           <h3>Cara Membuat SOP Digital Perusahaan yang Efektif (+ Template)</h3>
         </div>
       </a>
       <a href="/blog/apa-itu-lms.html" class="related-card">
-        <div class="related-thumb"><img src="https://images.unsplash.com/photo-1555209183-8facf96a4349?w=300&h=100&fit=crop&auto=format&q=80" alt="LMS platform pembelajaran" loading="lazy"></div>
+        <div class="related-thumb"><img src="https://images.unsplash.com/photo-1555209183-8facf96a4349?w=400?w=300&h=100&fit=croph=160?w=300&h=100&fit=cropfit=crop&auto=format&q=80" alt="LMS platform pembelajaran" loading="lazy"></div>
         <div class="related-content">
           <span class="rtag">LMS</span>
           <h3>Apa itu LMS? Panduan Lengkap untuk HRD Perusahaan Indonesia</h3>
@@ -408,6 +409,14 @@
         setTimeout(function() { toast.classList.remove('show'); }, 2500);
       });
     }
+  </script>
+
+  <script>
+    const ham = document.getElementById('hamburger');
+    const mob = document.getElementById('mobileMenu');
+    function closeMenu() { mob.classList.remove('open'); }
+    if (ham) ham.addEventListener('click', () => mob.classList.toggle('open'));
+    window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
   </script>
 </body>
 </html>
