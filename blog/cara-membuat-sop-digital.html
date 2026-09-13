@@ -120,7 +120,7 @@ body { font-family: 'Inter', sans-serif; background: #fff; color: #344054; line-
     .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
     .related-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid #e4e7ec; border-radius: 12px; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
     .related-card:hover { box-shadow: 0 6px 20px rgba(12,17,29,0.1); transform: translateY(-2px); }
-    .related-thumb { background: linear-gradient(135deg, #0c111d, #1a2540); height: 100px; display: flex; align-items: center; justify-content: center; font-size: 2.25rem; }
+    .related-thumb { height: 100px; overflow: hidden; } .related-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .related-content { padding: 0.875rem 1rem 1rem; }
     .related-content .rtag { display: inline-block; background: #eff8ff; color: #1570ef; font-size: 0.65rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
     .related-content h3 { font-size: 0.875rem; font-weight: 600; color: #0c111d; line-height: 1.4; }
@@ -410,21 +410,21 @@ body { font-family: 'Inter', sans-serif; background: #fff; color: #344054; line-
     <h2>Artikel Terkait</h2>
     <div class="related-grid">
       <a href="/blog/video-sop-adalah.html" class="related-card">
-        <div class="related-thumb">🎬</div>
+        <div class="related-thumb"><img src="https://images.unsplash.com/photo-1572666340727-40ec7a1cb2a0?w=300&h=100&fit=crop&auto=format&q=80" alt="Video SOP perusahaan" loading="lazy"></div>
         <div class="related-content">
           <span class="rtag">SOP Digital</span>
           <h3>Apa itu Video SOP? Cara Modernisasi Prosedur Perusahaan dengan Video</h3>
         </div>
       </a>
       <a href="/blog/onboarding-karyawan-baru.html" class="related-card">
-        <div class="related-thumb">🤝</div>
+        <div class="related-thumb"><img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=300&h=100&fit=crop&auto=format&q=80" alt="Onboarding karyawan baru" loading="lazy"></div>
         <div class="related-content">
           <span class="rtag">Onboarding</span>
           <h3>Panduan Onboarding Karyawan Baru yang Efisien di Era Digital</h3>
         </div>
       </a>
       <a href="/blog/aplikasi-training-karyawan.html" class="related-card">
-        <div class="related-thumb">💻</div>
+        <div class="related-thumb"><img src="https://images.unsplash.com/photo-1560131914-2e469a0e8607?w=300&h=100&fit=crop&auto=format&q=80" alt="Aplikasi training karyawan" loading="lazy"></div>
         <div class="related-content">
           <span class="rtag">Pelatihan</span>
           <h3>8 Aplikasi Training Karyawan Terbaik untuk Perusahaan Indonesia 2026</h3>
