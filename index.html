@@ -694,6 +694,29 @@
     .pk-btn.solid:hover { background: var(--accent-blue-200); border-color: var(--accent-blue-200); color: var(--navy-900); }
 
     /* CTA SECTION */
+    /* BLOG PREVIEW */
+    .blog-preview-sec { padding: 96px 6%; background: #f9fafb; }
+    .bp-container { max-width: 1160px; margin: 0 auto; }
+    .bp-header { text-align: center; margin-bottom: 3rem; }
+    .bp-header .sec-label { display: inline-block; background: #eff8ff; color: #1570ef; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
+    .bp-header h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; color: var(--navy-900); margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+    .bp-header p { color: var(--gray-500); font-size: 1rem; max-width: 520px; margin: 0 auto; }
+    .bp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2.5rem; }
+    .bp-card { text-decoration: none; color: inherit; background: #fff; border: 1px solid var(--gray-200); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s, transform 0.2s; }
+    .bp-card:hover { box-shadow: 0 8px 32px rgba(12,17,29,0.1); transform: translateY(-3px); }
+    .bp-thumb { position: relative; height: 180px; overflow: hidden; }
+    .bp-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .bp-tag { position: absolute; top: 12px; left: 12px; background: #eff8ff; color: #1570ef; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .bp-body { padding: 1.25rem 1.25rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
+    .bp-body h3 { font-size: 0.975rem; font-weight: 700; color: var(--navy-900); line-height: 1.45; margin: 0; }
+    .bp-body p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; flex: 1; }
+    .bp-read { font-size: 0.85rem; font-weight: 600; color: #1570ef; margin-top: auto; }
+    .bp-cta-wrap { text-align: center; }
+    .bp-all-btn { display: inline-block; border: 2px solid var(--navy-900); color: var(--navy-900); padding: 0.75rem 2rem; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: all 0.2s; }
+    .bp-all-btn:hover { background: var(--navy-900); color: #fff; }
+    @media (max-width: 900px) { .bp-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .bp-grid { grid-template-columns: 1fr; } .blog-preview-sec { padding: 64px 5%; } }
+
     .cta-sec { padding: 120px 6%; background: var(--navy-900); text-align: center; position: relative; overflow: hidden; }
     .cta-sec::before { content: ''; position: absolute; bottom: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(21,112,239,0.1), transparent 75%); border-radius: 50%; }
     .cta-sec .sec-tag { color: var(--accent-blue-200); display: block; margin-bottom: 16px; }
@@ -908,6 +931,7 @@
       <a href="#team">Tim Kami</a>
       <a href="#paket">Harga</a>
       <a href="#visimisi">Visi & Misi</a>
+      <a href="/blog/">Blog</a>
     </div>
     <div class="nav-right">
       <a href="javascript:void(0)" class="btn-cta-nav open-demo-modal">Jadwalkan Demo Eksklusif</a>
@@ -926,6 +950,7 @@
     <a href="#benefit" onclick="closeMenu()">Keunggulan</a>
     <a href="#paket" onclick="closeMenu()">Harga</a>
     <a href="#visimisi" onclick="closeMenu()">Visi & Misi</a>
+    <a href="/blog/" onclick="closeMenu()">Blog</a>
     <a href="javascript:void(0)" class="mm-cta open-demo-modal" onclick="closeMenu()">Jadwalkan Demo Eksklusif</a>
   </div>
 
@@ -1402,6 +1427,62 @@
           <div class="team-accent-line"></div>
           <p class="team-bio">Berbekal pengalaman bertahun-tahun sebagai UI/UX Designer di Manja Labs Technologies perusahaan riset & pengembangan software berbasis Singapura, Hendra Fitriadi membawa standar desain produk berskala internasional. Di myAxara, Hendra memimpin perancangan antarmuka platform LMS dan sistem SOP berbasis AI agar memiliki performa super cepat, intuitif, dan nyaman digunakan oleh seluruh lapisan karyawan tingkat global.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="blog-preview-sec" id="blog">
+    <div class="bp-container">
+      <div class="bp-header fade-up">
+        <span class="sec-label">Dari Blog myAxara</span>
+        <h2>Panduan &amp; Insight untuk HR &amp; Pemimpin Bisnis</h2>
+        <p>Artikel praktis seputar SOP digital, training karyawan, onboarding, dan LMS untuk perusahaan Indonesia.</p>
+      </div>
+      <div class="bp-grid fade-up">
+
+        <!-- Artikel 1 -->
+        <a href="/blog/video-sop-adalah.html" class="bp-card">
+          <div class="bp-thumb">
+            <img src="https://images.unsplash.com/photo-1572666340727-40ec7a1cb2a0?w=400&h=200&fit=crop&auto=format&q=80" alt="Video SOP perusahaan" loading="lazy">
+            <span class="bp-tag">SOP Digital</span>
+          </div>
+          <div class="bp-body">
+            <h3>Apa itu Video SOP? Cara Modernisasi Prosedur Perusahaan dengan Video</h3>
+            <p>Pelajari manfaat Video SOP dibanding SOP dokumen dan cara membuatnya secara efektif.</p>
+            <span class="bp-read">Baca artikel &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Artikel 2 -->
+        <a href="/blog/onboarding-karyawan-baru.html" class="bp-card">
+          <div class="bp-thumb">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=200&fit=crop&auto=format&q=80" alt="Onboarding karyawan baru" loading="lazy">
+            <span class="bp-tag">Onboarding</span>
+          </div>
+          <div class="bp-body">
+            <h3>Panduan Onboarding Karyawan Baru yang Efisien di Era Digital</h3>
+            <p>Kerangka 30-60-90 hari, checklist lengkap, dan teknologi untuk mempercepat adaptasi karyawan.</p>
+            <span class="bp-read">Baca artikel &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Artikel 3 -->
+        <a href="/blog/apa-itu-lms.html" class="bp-card">
+          <div class="bp-thumb">
+            <img src="https://images.unsplash.com/photo-1555209183-8facf96a4349?w=400&h=200&fit=crop&auto=format&q=80" alt="Apa itu LMS?" loading="lazy">
+            <span class="bp-tag">LMS</span>
+          </div>
+          <div class="bp-body">
+            <h3>Apa itu LMS? Panduan Lengkap untuk HRD Perusahaan Indonesia</h3>
+            <p>Penjelasan lengkap LMS: fungsi, manfaat, jenis, cara memilih, dan FAQ untuk HRD.</p>
+            <span class="bp-read">Baca artikel &rarr;</span>
+          </div>
+        </a>
+
+      </div>
+      <div class="bp-cta-wrap fade-up">
+        <a href="/blog/" class="bp-all-btn">Lihat Semua Artikel &rarr;</a>
       </div>
     </div>
   </section>
